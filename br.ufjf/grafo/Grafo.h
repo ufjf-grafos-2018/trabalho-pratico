@@ -6,15 +6,19 @@
 #define TRABALHO_GRAFOS_GRAFO_H
 
 #include "Vertice.h"
+#include <string>
+
+using namespace std;
 
 class Grafo {
 
 private:
     Vertice* inicio;
     int tamanho;
+    void lerArquivo(string nomeArquivoEntrada);
 
 public:
-    Grafo( int tamanho);
+    Grafo(string nomeArquivoEntrada);
     void addVertice(int vertice1, int vertice2, int peso);
 
     Vertice *getInicio() const;
@@ -24,6 +28,8 @@ public:
     int getTamanho() const;
 
     void setTamanho(int tamanho);
+
+    void salvarArquivo();
 
 };
 

@@ -4,32 +4,59 @@
 
 #include <clocale>
 #include "Grafo.h"
+#include <fstream>
+#include <iostream>
+#include <cstring>
 
-Grafo::Grafo( int tamanho){//popula o grafo com o numero de arestas apresentado no arquivo
-    this->setInicio(NULL);
-    this->tamanho = tamanho;
+Grafo::Grafo(string nomeArquivoEntrada){//popula o grafo com o numero de arestas apresentado no arquivo
+    lerArquivo(nomeArquivoEntrada);
 
-    Vertice *vertice = new Vertice();
-   
-    vertice->setNome(1);
-    vertice->setProximo(NULL);
-    vertice->setGrau(0);
-    this->inicio = vertice;
-    
-    for (int i = 2; i <= this->tamanho; ++i) {
-
-        Vertice *aux = new Vertice();
-        aux->setGrau(0);
-        aux->setNome(i);
-        aux->setNeighbor(NULL);
-        vertice->setProximo(aux);
-        vertice = aux;
-        
-
-    }
 }
 
+void Grafo::lerArquivo(string nomeArquivoEntrada) {
 
+    int grauGrafo,v1,v2,p;
+
+    ifstream file(nomeArquivoEntrada);
+    char * url = new char [nomeArquivoEntrada.length()+1];
+    strcpy(url, nomeArquivoEntrada.c_str());
+
+    FILE *arq;
+
+    arq = fopen(url, "r");
+    if(arq == NULL)
+        printf("Erro, nao foi possivel abrir o arquivo\n");
+    else
+
+        fscanf(arq,"%d", &grauGrafo);
+        this->setInicio(NULL);
+        this->tamanho = grauGrafo;
+        Vertice *vertice = new Vertice();
+
+        vertice->setNome(1);
+        vertice->setProximo(NULL);
+        vertice->setGrau(0);
+        this->inicio = vertice;
+
+        for (int i = 2; i <= this->tamanho; ++i) {
+
+            Vertice *aux = new Vertice();
+            aux->setGrau(0);
+            aux->setNome(i);
+            aux->setNeighbor(NULL);
+            vertice->setProximo(aux);
+            vertice = aux;
+        }
+
+
+    while( (fscanf(arq,"%d %d %d\n", &v1, &v2, &p))!=EOF ) {
+
+        this->addVertice(v1,v2,p);
+    }
+
+    fclose(arq);
+
+}
 
 void Grafo::addVertice(int vertice1, int vertice2,int peso) {
     Vertice * vert1 = new Vertice();
@@ -147,6 +174,11 @@ void Grafo::setTamanho(int tamanho) {
     Grafo::tamanho = tamanho;
 }
 
+void getline(char *str)
+{
+    scanf("%[^\n]s", str);
+    fflush(stdin);
+}
 
 
 
