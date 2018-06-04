@@ -11,11 +11,11 @@ using namespace std;
 
 int main() {
 
-    ifstream file("/home/rodolpho/Documentos/parametros.txt");
+    ifstream file("../entradas/parametros.txt");
     int grauGrafo,v1,v2,p;
 
 
-    char url[]="/home/rodolpho/Documentos/parametros.txt";
+    char url[]="../entradas/parametros.txt";
 
     FILE *arq;
 
