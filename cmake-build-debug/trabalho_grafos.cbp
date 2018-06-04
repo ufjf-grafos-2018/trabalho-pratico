@@ -8,82 +8,104 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug"/>
+				<Option working_dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trabalho_grafos">
-				<Option output="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/trabalho_grafos.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 trabalho_grafos"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trabalho_grafos/fast">
-				<Option output="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/trabalho_grafos.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/5.3.0/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 trabalho_grafos/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug"/>
+				<Option working_dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="trabalho_grafos">
+				<Option output="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/trabalho_grafos" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 trabalho_grafos"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="trabalho_grafos/fast">
+				<Option output="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/trabalho_grafos" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 trabalho_grafos/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rodolpho/Área\ de\ Trabalho/Grafos/trabalho-pratico/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/main.cpp">
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp">
 			<Option target="trabalho_grafos"/>
 		</Unit>
-		<Unit filename="C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/CMakeLists.txt">
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Aresta.h">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Grafo.h">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Vertice.h">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/main.cpp">
+			<Option target="trabalho_grafos"/>
+		</Unit>
+		<Unit filename="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
