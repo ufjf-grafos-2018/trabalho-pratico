@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.10)
-project(trabalho_grafos)
+cmake_minimum_required(VERSION 3.9)
+project(trabalho-pratico)
 
 set(CMAKE_CXX_STANDARD 11)
 
