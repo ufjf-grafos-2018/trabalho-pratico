@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/rodolpho/Downloads/CLion-2018.1.1/clion-2018.1.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/maxjf1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.5087.36/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/rodolpho/Downloads/CLion-2018.1.1/clion-2018.1.1/bin/cmake/bin/cmake -E remove -f
+RM = /home/maxjf1/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.5087.36/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico"
+CMAKE_SOURCE_DIR = /home/maxjf1/projetos/trabalho-pratico
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug"
+CMAKE_BINARY_DIR = /home/maxjf1/projetos/trabalho-pratico/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/trabalho_grafos.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/trabalho_grafos.dir/flags.make
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o: CMakeFiles/trabalho_grafos.dir/flags.make
 CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o: ../br.ufjf/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o -c "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o -c /home/maxjf1/projetos/trabalho-pratico/br.ufjf/main.cpp
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/main.cpp" > CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxjf1/projetos/trabalho-pratico/br.ufjf/main.cpp > CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.i
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/main.cpp" -o CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxjf1/projetos/trabalho-pratico/br.ufjf/main.cpp -o CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.s
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/trabalho_grafos.dir/br.ufjf/main.cpp.o.provides.build: CMakeFiles/tra
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o: CMakeFiles/trabalho_grafos.dir/flags.make
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o: ../br.ufjf/grafo/Grafo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o -c "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o -c /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp" > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.i
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp" -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Grafo.cpp -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.s
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Grafo.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o: CMakeFiles/trabalho_grafos.dir/flags.make
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o: ../br.ufjf/grafo/Vertice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o -c "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o -c /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp" > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.i
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp" -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Vertice.cpp -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.s
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o.provides.build: CMake
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o: CMakeFiles/trabalho_grafos.dir/flags.make
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o: ../br.ufjf/grafo/Aresta.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o -c "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o -c /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp" > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp > CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.i
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp" -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maxjf1/projetos/trabalho-pratico/br.ufjf/grafo/Aresta.cpp -o CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.s
 
 CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o.requires:
 
@@ -169,7 +169,7 @@ trabalho_grafos: CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Vertice.cpp.o
 trabalho_grafos: CMakeFiles/trabalho_grafos.dir/br.ufjf/grafo/Aresta.cpp.o
 trabalho_grafos: CMakeFiles/trabalho_grafos.dir/build.make
 trabalho_grafos: CMakeFiles/trabalho_grafos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable trabalho_grafos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable trabalho_grafos"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trabalho_grafos.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/trabalho_grafos.dir/clean:
 .PHONY : CMakeFiles/trabalho_grafos.dir/clean
 
 CMakeFiles/trabalho_grafos.dir/depend:
-	cd "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico" "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico" "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug" "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug" "/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/maxjf1/projetos/trabalho-pratico/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maxjf1/projetos/trabalho-pratico /home/maxjf1/projetos/trabalho-pratico /home/maxjf1/projetos/trabalho-pratico/cmake-build-debug /home/maxjf1/projetos/trabalho-pratico/cmake-build-debug /home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/trabalho_grafos.dir/depend
 

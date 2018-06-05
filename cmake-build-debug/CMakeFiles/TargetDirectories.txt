@@ -1,3 +1,3 @@
-/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rodolpho/Área de Trabalho/Grafos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir
+/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir
