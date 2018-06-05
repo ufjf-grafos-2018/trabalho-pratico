@@ -8,15 +8,37 @@
 
 using namespace std;
 
+/**
+ * Construtor
+ * @param tamanho Tamanho do grafo
+ */
+Grafo::Grafo(int tamanho) {
+    init(tamanho);
+}
 
-Grafo::Grafo() : tamanho(0), lista(NULL) {}
+/**
+ * Construtor
+ * @param tamanho Tamanho do grafo
+ * @param digrafo Se é digrafo
+ */
+Grafo::Grafo(int tamanho, bool digrafo) : digrafo(digrafo) {
+    init(tamanho);
+}
 
-Grafo::Grafo(int tamanho) : tamanho(tamanho), lista(NULL) {
+/**
+ * Inicializa o grafo
+ * @param tamanho Quantidade de nós a serem adicionadas
+ */
+void Grafo::init(int tamanho) {
     for (int i = 1; i <= tamanho; ++i) {
         addNo(i);
     }
 }
 
+/**
+ * Adiciona um nó ao grafo
+ * @param id ID do nó
+ */
 void Grafo::addNo(int id) {
     No *no = new No(id);
     if (!vazio()) {
@@ -26,10 +48,15 @@ void Grafo::addNo(int id) {
     tamanho++;
 }
 
+/**
+ * Remove um nó do grafo
+ * @param id ID do nó
+ */
 void Grafo::removeNo(int id) {
     No *no = lista, *anterior;
     if (no != NULL && no->getId() == id) {
         lista = no->getProx();
+        removeArestas(no);
         delete no;
     } else {
         while (no != NULL && no->getId() != id) {
@@ -38,15 +65,16 @@ void Grafo::removeNo(int id) {
         }
         if (no != NULL) {
             anterior->setProx(no->getProx());
+            removeArestas(no);
             delete no;
         }
     }
 }
 
 /**
- * Adiciona Aresta
- * @param inicio
- * @param fim
+ * Adiciona Aresta ao grafo
+ * @param inicio ID do nó de origem
+ * @param fim ID do nó de destino
  * @param peso
  */
 void Grafo::addAresta(int inicio, int fim, int peso) {
@@ -68,7 +96,11 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
 
 }
 
-
+/**
+ * Remove Aresta do grafo
+ * @param inicio ID do nó de origem
+ * @param fim ID do nó de destino
+ */
 void Grafo::removeAresta(int inicio, int fim) {
     No *noInicio = NULL, *noFim = NULL, *atual = lista;
     while ((noInicio == NULL || noFim == NULL) && atual != NULL) {
@@ -83,14 +115,23 @@ void Grafo::removeAresta(int inicio, int fim) {
 
     if (noInicio && noFim) {
         noInicio->removeAresta(noFim);
-        noFim->removeAresta(noInicio);
+        if (!digrafo) {
+            noFim->removeAresta(noInicio);
+        }
     }
 }
 
+/**
+ * Se o grafo está vazio
+ * @return
+ */
 bool Grafo::vazio() {
     return lista == NULL;
 }
 
+/**
+ * Imprime o grafo
+ */
 void Grafo::print() {
     No *no = lista;
     Aresta *aresta;
@@ -105,6 +146,30 @@ void Grafo::print() {
         no = no->getProx();
     }
 }
+
+/**
+ * Remove as arestas de um nó
+ * @param no
+ */
+void Grafo::removeArestas(No *no) {
+    if (digrafo) {
+        /**
+         * Digrafo - varrer grafo em busca de incidências
+         * TODO: Remoção caso seja digrafo - varredura
+         */
+    } else {
+        /**
+         * Não digrafo - remover arestas dos nós conectados apenas
+         */
+        cout << "Removendo arestas de " << no->getId() << endl;
+        Aresta *aresta = no->getArestas();
+        while (aresta) {
+            aresta->getDestino()->removeAresta(no);
+            aresta = aresta->getProx();
+        }
+    }
+}
+
 
 
 

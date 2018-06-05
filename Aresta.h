@@ -18,9 +18,9 @@ private:
 public:
     Aresta(No *origem, No *destino, int peso);
 
-    void setProx(Aresta *prox);
-
     Aresta(No *origem, No *destino);
+
+    void setProx(Aresta *prox);
 
     int getPeso() const;
 

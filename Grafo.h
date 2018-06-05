@@ -10,12 +10,15 @@
 
 class Grafo {
 private:
-    int tamanho;
-    No *lista;
+    int tamanho = 0;
+    No *lista = NULL;
+    bool digrafo = false;
+    void init(int tamanho);
+    void removeArestas(No *no);
 public:
-    Grafo();
-
     Grafo(int tamanho);
+
+    Grafo(int tamanho, bool digrafo);
 
     void addNo(int id);
 
