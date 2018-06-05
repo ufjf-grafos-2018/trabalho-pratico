@@ -6,7 +6,39 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/main.cpp
+/home/maxjf1/projetos/trabalho-pratico/Aresta.cpp
+Aresta.h
+/home/maxjf1/projetos/trabalho-pratico/Aresta.h
+
+/home/maxjf1/projetos/trabalho-pratico/Aresta.h
+No.h
+/home/maxjf1/projetos/trabalho-pratico/No.h
+
+/home/maxjf1/projetos/trabalho-pratico/Grafo.cpp
+stdio.h
+-
 iostream
 -
+Grafo.h
+/home/maxjf1/projetos/trabalho-pratico/Grafo.h
+
+/home/maxjf1/projetos/trabalho-pratico/Grafo.h
+No.h
+/home/maxjf1/projetos/trabalho-pratico/No.h
+
+/home/maxjf1/projetos/trabalho-pratico/No.cpp
+stdio.h
+-
+No.h
+/home/maxjf1/projetos/trabalho-pratico/No.h
+
+/home/maxjf1/projetos/trabalho-pratico/No.h
+Aresta.h
+/home/maxjf1/projetos/trabalho-pratico/Aresta.h
+
+/home/maxjf1/projetos/trabalho-pratico/main.cpp
+iostream
+-
+Grafo.h
+/home/maxjf1/projetos/trabalho-pratico/Grafo.h
 

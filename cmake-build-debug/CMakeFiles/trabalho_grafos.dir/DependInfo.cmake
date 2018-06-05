@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/main.cpp" "C:/Users/MAXWELL/Documents/PROJETOS/C-C++/trabalho-grafos/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/main.cpp.obj"
+  "/home/maxjf1/projetos/trabalho-pratico/Aresta.cpp" "/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Aresta.cpp.o"
+  "/home/maxjf1/projetos/trabalho-pratico/Grafo.cpp" "/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Grafo.cpp.o"
+  "/home/maxjf1/projetos/trabalho-pratico/No.cpp" "/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/No.cpp.o"
+  "/home/maxjf1/projetos/trabalho-pratico/main.cpp" "/home/maxjf1/projetos/trabalho-pratico/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
