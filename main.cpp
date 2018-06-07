@@ -45,7 +45,7 @@ int main() {
 
 void mostrarMenuPrincipal() {
     int opcao = 0;
-    int no=0;
+    int no=0, no2=0;
     cout << "    ******  TRABALHO DE GRAFOS ******" << endl<< endl;
 
     while(opcao != 16) {
@@ -98,6 +98,7 @@ void mostrarMenuPrincipal() {
                 break;
             }
             case 5: {
+
                 break;
             }
             case 6: {
@@ -117,9 +118,22 @@ void mostrarMenuPrincipal() {
                 break;
             }
             case 11: {
+                cout << "Digite o nó desejado: " << endl;
+                cin >> no;
+                grafo->removeNo(no);
+                cout << "Nó "<< no << " removido" << endl;
+                grafo->print();
                 break;
             }
             case 12: {
+                cout << "Digite vertice de origem: " << endl;
+                cin >> no;
+
+                cout << "Digite vertice de destino: " << endl;
+                cin >> no2;
+                grafo->removeAresta(no, no2);
+                cout << "Aresta removida" << endl;
+                grafo->print();
                 break;
             }
             case 13: {
