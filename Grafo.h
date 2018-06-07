@@ -16,6 +16,8 @@ private:
     void init(int tamanho);
     void removeArestas(No *no);
 public:
+    Grafo();
+
     Grafo(int tamanho);
 
     Grafo(int tamanho, bool digrafo);
@@ -42,15 +44,18 @@ public:
 
     bool isCompleto();
 
-    bool kRegular(int id);
+    int kRegular();
+
+    bool isKRegular(int k);
+
+    bool isKRegular();
 
     void vizinhoFechado(int id);
 
-    void vizinhoAberto(int id);
+    void vizinhoAberto(int id, bool fechado);
     void printSequenciaGraus();
 
     void print();
-
 };
 
 

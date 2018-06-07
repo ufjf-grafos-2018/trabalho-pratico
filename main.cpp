@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     int grauGrafo, v1, v2, p;
-    string nomeArquivoEntrada ="/home/maxjf1/projetos/trabalho-pratico/entrada.txt";
+    string nomeArquivoEntrada ="../entrada.txt";
 
     ifstream file(nomeArquivoEntrada);
     char *url = new char[nomeArquivoEntrada.length() + 1];
@@ -29,7 +29,7 @@ int main() {
     }
 
     fclose(arq);
-    grafo->print();
+//    grafo->print();
 
     ///xurumelos
 //    Grafo *grafo = new Grafo(5);
@@ -41,17 +41,17 @@ int main() {
 //    grafo->removeNo(3);
 //    grafo->removeAresta(5, 1);
 //    grafo->print();g
-    grafo->getGrau();
-
-    grafo->printSequenciaGraus();
-
-    grafo->isCompleto();
-
-    grafo->kRegular(5);
-
-    grafo->vizinhoAberto(5);
-
-    grafo->vizinhoFechado(5);
+//    grafo->getGrau();
+//
+//    grafo->printSequenciaGraus();
+//
+//    grafo->isCompleto();
+//
+//    grafo->kRegular();
+//
+    grafo->vizinhoAberto(5, false);
+//
+//    grafo->vizinhoFechado(5);
 
     return 0;
 }

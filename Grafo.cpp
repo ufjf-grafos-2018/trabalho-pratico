@@ -8,6 +8,9 @@
 
 using namespace std;
 
+
+Grafo::Grafo() {}
+
 /**
  * Construtor
  * @param tamanho Tamanho do grafo
@@ -91,7 +94,7 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
 
     if (noInicio && noFim) {
         noInicio->addAresta(noFim, peso);
-        if(!digrafo){
+        if (!digrafo) {
             noFim->addAresta(noInicio, peso);
         }
     }
@@ -190,8 +193,8 @@ int Grafo::getOrdem() {
 int Grafo::getGrau() {
     int grau = 0, grauAtual;
     No *no = inicioLista;
-    while(no){
-        if(no->getGrau() > grau)
+    while (no) {
+        if (no->getGrau() > grau)
             grau = no->getGrau();
         no = no->getProx();
     }
@@ -200,25 +203,25 @@ int Grafo::getGrau() {
 
 int Grafo::getGrauNo(int id) {
     No *no = getNo(id);
-    if(no) return no->getGrau();
+    if (no) return no->getGrau();
     return 0;
 }
 
 No *Grafo::getNo(int id) {
     No *no = inicioLista;
-    while(no){
-        if(no->getId() == id)
+    while (no) {
+        if (no->getId() == id)
             return no;
     }
     return nullptr;
 }
 
 int *Grafo::getSequenciaGraus() {
-    int* graus = new int[tamanho];
+    int *graus = new int[tamanho];
     int i = 0;
-    No * no = inicioLista;
-    while(no){
-        graus[i]= no->getGrau();
+    No *no = inicioLista;
+    while (no) {
+        graus[i] = no->getGrau();
         cout << graus[i] << endl;
         i++;
         no = no->getProx();
@@ -230,84 +233,91 @@ void Grafo::printSequenciaGraus() {
     int *graus = getSequenciaGraus();
 
     cout << "[";
-    for(int i = 0; i < tamanho; i++){
-        cout << graus[i] << (i+1 == tamanho ? "" : ",");
+    for (int i = 0; i < tamanho; i++) {
+        cout << graus[i] << (i + 1 == tamanho ? "" : ",");
     }
     cout << "]" << endl;
 
 }
 
-bool Grafo::kRegular(int k){
+int Grafo::kRegular() {
+    int *graus = getSequenciaGraus();
+    int k = graus[0];
+    for (int i = 1; i < tamanho; ++i) {
+        if (k != graus[i]) {
+            //cout << "Não É K-regular" <<  endl;
+            return -1;
+        }
+    }
+    //cout << "É " << k << "-regular." << endl;
+    return k;
+}
+
+bool Grafo::isKRegular(int k) {
+    return kRegular() == k;
+}
+
+bool Grafo::isKRegular() {
+    return kRegular() >= 0;
+}
+
+bool Grafo::isCompleto() {
     int *graus = getSequenciaGraus();
     for (int i = 0; i < tamanho; ++i) {
-        if(k!=graus[i]){
-            cout << "Não é "<< k <<"-regular." << endl;
+        if (graus[i] != tamanho - 1) {
+//            cout << "O grafo não é completo." << endl;
             return false;
         }
     }
-    cout << "É "<< k <<"-regular." << endl;
-    return true;
-}
-
-bool Grafo::isCompleto(){
-    int *graus = getSequenciaGraus();
-    for (int i = 0; i < tamanho; ++i) {
-        if(graus[i] != tamanho-1){
-            cout << "O grafo não é completo." << endl;
-            return false;
-        }
-    }
-    cout << "O grafo é completo." << endl;
+//    cout << "O grafo é completo." << endl;
     return true;
 
 }
 
-void Grafo::vizinhoAberto(int id){
+void Grafo::vizinhoAberto(int id, bool fechado) {
     No *noBuscado = getNo(id);
-    if(noBuscado){
-        Aresta *aresta = noBuscado->getArestas();
-        Grafo *grafoVizinho = new Grafo(noBuscado->getGrau());
-    while(aresta) {
-        No *aux = aresta->getDestino();
-        grafoVizinho->addNo(aux->getId());
-        Aresta *auxAresta = aux->getArestas();
-        while(auxAresta){
-            if(noBuscado->getId() != aux->getArestas()->getDestino()->getId()){
-            grafoVizinho->addAresta(aux->getId(),aux->getArestas()->getDestino()->getId(),aux->getArestas()->getPeso());
+
+    if (!noBuscado){
+        cout << "No " << id << "nao encontrado!";
+        return;
+    }
+
+    int i = 0, tamanhoVizinhos = noBuscado->getGrau();
+
+    if (fechado)
+        tamanhoVizinhos++;
+
+    No **vizinhos = new No *[tamanhoVizinhos], *noAux;
+    Grafo *vizinhanca = new Grafo();
+    Aresta *arestaAux = noBuscado->getArestas();
+
+    if (fechado) {
+        vizinhanca->addNo(noBuscado->getId());
+        vizinhos[0] = noBuscado;
+        i = 1;
+    }
+
+    while (arestaAux) {
+        vizinhanca->addNo(arestaAux->getDestino()->getId());
+        vizinhos[i] = arestaAux->getDestino();
+        arestaAux = arestaAux->getProx();
+        i++;
+    }
+
+    for (i = 0; i < tamanhoVizinhos; i++) {
+        noAux = vizinhos[i];
+        arestaAux = noAux->getArestas();
+        while (arestaAux) {
+
+            for (int j = 0; j < tamanhoVizinhos; j++) {
+                if (vizinhos[j] && arestaAux->getDestino() == vizinhos[j]) {
+                    vizinhanca->addAresta(arestaAux->getOrigem()->getId(), arestaAux->getDestino()->getId(),
+                                          arestaAux->getPeso());
+                }
             }
-            auxAresta = auxAresta->getProx();
+            arestaAux = arestaAux->getProx();
         }
-    aresta = aresta->getProx();
+        vizinhos[i] = NULL;
     }
-        cout << "Grafo vizinho aberto " << endl;
-        grafoVizinho->print();
-    }else{
-        cout << "O nó não existe no grafo" << endl;
-    }
-
-
-}
-
-void Grafo::vizinhoFechado(int id){
-    No *noBuscado = getNo(id);
-    if(noBuscado){
-        Aresta *aresta = noBuscado->getArestas();
-        Grafo *grafoVizinho = new Grafo(noBuscado->getGrau());
-        while(aresta) {
-            No *aux = aresta->getDestino();
-            grafoVizinho->addNo(noBuscado);
-            Aresta *auxAresta = aux->getArestas();
-            while(auxAresta){
-                    grafoVizinho->addAresta(aux->getId(),aux->getArestas()->getDestino()->getId(),aux->getArestas()->getPeso());
-                auxAresta = auxAresta->getProx();
-            }
-            aresta = aresta->getProx();
-        }
-        cout << "Grafo vizinho fechado " << endl;
-        grafoVizinho->print();
-    }else{
-        cout << "O nó não existe no grafo" << endl;
-    }
-
-
+    vizinhanca->print();
 }
