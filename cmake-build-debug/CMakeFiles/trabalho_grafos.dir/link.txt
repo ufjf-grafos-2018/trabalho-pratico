@@ -1,3 +1,1 @@
-C:\Users\MAXWELL\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\181.4445.84\bin\cmake\bin\cmake.exe -E remove -f CMakeFiles\trabalho_grafos.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\trabalho_grafos.dir/objects.a @CMakeFiles\trabalho_grafos.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\trabalho_grafos.dir/objects.a -Wl,--no-whole-archive  -o trabalho_grafos.exe -Wl,--out-implib,libtrabalho_grafos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\trabalho_grafos.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/trabalho_grafos.dir/main.cpp.o  -o trabalho_grafos 
