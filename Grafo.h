@@ -16,6 +16,9 @@ private:
     void init(int tamanho);
     void removeArestas(No *no);
 public:
+
+    No *getInicioLista() const;
+
     Grafo(int tamanho);
 
     Grafo(int tamanho, bool digrafo);
@@ -33,6 +36,8 @@ public:
     int getOrdem();
 
     int getGrau();
+
+    bool multigrafo();
 
     int getGrauNo(int id);
 

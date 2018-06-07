@@ -199,8 +199,14 @@ int Grafo::getGrau() {
 }
 
 int Grafo::getGrauNo(int id) {
-    No *no = getNo(id);
-    if(no) return no->getGrau();
+    if (getNo(id)){
+
+        No *no = getNo(id);
+        return no->getGrau();
+    }
+    else
+        cout<<"Nó não existe no grafo"<<endl;
+
     return 0;
 }
 
@@ -209,6 +215,7 @@ No *Grafo::getNo(int id) {
     while(no){
         if(no->getId() == id)
             return no;
+        no= no->getProx();
     }
     return nullptr;
 }
@@ -235,4 +242,42 @@ void Grafo::printSequenciaGraus() {
     }
     cout << "]" << endl;
 
+}
+
+bool Grafo::multigrafo() {
+
+    No *auxNo = this->inicioLista;
+    Aresta *auxAresta;
+    Aresta *aux;
+    int id;
+
+    while(auxNo->getProx() != NULL)
+    {
+        auxAresta= auxNo->getArestas();
+
+        while(auxAresta !=NULL){
+            aux=auxAresta->getProx();
+            id = auxAresta->getDestino()->getId();
+            while(aux !=NULL){
+                if(id == aux->getDestino()->getId()) {
+                    cout<<"ID: "<< id<<"AUX: "<< aux->getDestino()->getId()<<endl;
+                    return false;
+                }
+
+                aux = aux->getProx();
+
+            }
+            auxAresta= auxAresta->getProx();
+        }
+
+        auxNo = auxNo->getProx();
+    }
+
+    return true;
+
+
+}
+
+No *Grafo::getInicioLista() const {
+    return inicioLista;
 }

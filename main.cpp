@@ -3,47 +3,38 @@
 #include <cstring>
 #include "Grafo.h"
 
+#include "IO/ManipuladorArquivo.h"
+
 using namespace std;
 
-int main() {
-    int grauGrafo, v1, v2, p;
-    string nomeArquivoEntrada ="/home/maxjf1/projetos/trabalho-pratico/entrada.txt";
+int main(int argc, char** argv) {
 
-    ifstream file(nomeArquivoEntrada);
-    char *url = new char[nomeArquivoEntrada.length() + 1];
-    strcpy(url, nomeArquivoEntrada.c_str());
-
-    FILE *arq;
-
-    arq = fopen(url, "r");
-    if (arq == NULL)
-        printf("Erro, nao foi possivel abrir o arquivo\n");
-    else
-
-        fscanf(arq, "%d", &grauGrafo);
-    Grafo *grafo = new Grafo(grauGrafo);
-
-    while ((fscanf(arq, "%d %d %d\n", &v1, &v2, &p)) != EOF) {
-
-        grafo->addAresta(v1, v2, p);
+    if(argc != 3)
+    {
+        cout<<"Paraetros errados: USO:"<< argv[0]<<" <arquivoEntrada.txt> <arquivoSaida.txt>"<<endl;
+        return 1;
     }
+    string nomeArquivoEntrada =argv[1];
 
-    fclose(arq);
+
+    ManipuladorArquivo manipula;
+
+    Grafo *grafo = manipula.leitor(nomeArquivoEntrada);
+
     grafo->print();
 
-    ///xurumelos
-//    Grafo *grafo = new Grafo(5);
-//
-//    grafo->addAresta(1, 3, 20);
-//    grafo->addAresta(2, 5, 40);
-//    grafo->addAresta(3, 4, 60);
-//    grafo->addAresta(1, 5, 70);
-//    grafo->removeNo(3);
-//    grafo->removeAresta(5, 1);
-//    grafo->print();g
-    grafo->getGrau();
 
-    grafo->printSequenciaGraus();
+   if(grafo->multigrafo())
+   {
+       cout<<"E";
+   }
+   cout<<grafo->getGrauNo(6);
+   grafo->getGrauNo(5);
+
+   grafo->addNo(6);
+   grafo->addAresta(6,1,25);
+
+   manipula.escreve(argv[2],grafo);
 
     return 0;
 }
