@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     int grauGrafo, v1, v2, p;
-    string nomeArquivoEntrada ="/home/maxjf1/projetos/trabalho-pratico/entrada.txt";
+    string nomeArquivoEntrada ="../entrada.txt";
 
     ifstream file(nomeArquivoEntrada);
     char *url = new char[nomeArquivoEntrada.length() + 1];
