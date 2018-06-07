@@ -1,13 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "Grafo.h"
+#include "Grafo/Grafo.h"
 
 using namespace std;
 
 int main() {
     int grauGrafo, v1, v2, p;
-    string nomeArquivoEntrada ="../entrada.txt";
+    string nomeArquivoEntrada ="../arquivos/entrada.txt";
 
     ifstream file(nomeArquivoEntrada);
     char *url = new char[nomeArquivoEntrada.length() + 1];
