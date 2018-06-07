@@ -16,6 +16,8 @@ private:
     void init(int tamanho);
     void removeArestas(No *no);
 public:
+    Grafo();
+
     Grafo(int tamanho);
 
     Grafo(int tamanho, bool digrafo);
@@ -43,6 +45,8 @@ public:
     void printSequenciaGraus();
 
     void print();
+
+    void setTamanho(int tamanho);
 
 };
 

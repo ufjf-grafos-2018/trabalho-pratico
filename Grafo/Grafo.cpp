@@ -10,6 +10,12 @@ using namespace std;
 
 /**
  * Construtor
+ */
+Grafo::Grafo() {
+}
+
+/**
+ * Construtor
  * @param tamanho Tamanho do grafo
  */
 Grafo::Grafo(int tamanho) {
@@ -235,4 +241,8 @@ void Grafo::printSequenciaGraus() {
     }
     cout << "]" << endl;
 
+}
+
+void Grafo::setTamanho(int tamanho) {
+    init(tamanho);
 }
