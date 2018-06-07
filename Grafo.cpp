@@ -42,9 +42,9 @@ void Grafo::init(int tamanho) {
 void Grafo::addNo(int id) {
     No *no = new No(id);
     if (!vazio()) {
-        no->setProx(lista);
+        no->setProx(inicioLista);
     }
-    lista = no;
+    inicioLista = no;
     tamanho++;
 }
 
@@ -53,9 +53,9 @@ void Grafo::addNo(int id) {
  * @param id ID do nó
  */
 void Grafo::removeNo(int id) {
-    No *no = lista, *anterior;
+    No *no = inicioLista, *anterior;
     if (no != NULL && no->getId() == id) {
-        lista = no->getProx();
+        inicioLista = no->getProx();
         removeArestas(no);
         delete no;
     } else {
@@ -78,7 +78,7 @@ void Grafo::removeNo(int id) {
  * @param peso
  */
 void Grafo::addAresta(int inicio, int fim, int peso) {
-    No *noInicio = NULL, *noFim = NULL, *atual = lista;
+    No *noInicio = NULL, *noFim = NULL, *atual = inicioLista;
     while ((noInicio == NULL || noFim == NULL) && atual != NULL) {
         if (atual->getId() == inicio) {
             noInicio = atual;
@@ -91,7 +91,9 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
 
     if (noInicio && noFim) {
         noInicio->addAresta(noFim, peso);
-        noFim->addAresta(noInicio, peso);
+        if(!digrafo){
+            noFim->addAresta(noInicio, peso);
+        }
     }
 
 }
@@ -102,7 +104,7 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
  * @param fim ID do nó de destino
  */
 void Grafo::removeAresta(int inicio, int fim) {
-    No *noInicio = NULL, *noFim = NULL, *atual = lista;
+    No *noInicio = NULL, *noFim = NULL, *atual = inicioLista;
     while ((noInicio == NULL || noFim == NULL) && atual != NULL) {
         if (atual->getId() == inicio) {
             noInicio = atual;
@@ -126,14 +128,14 @@ void Grafo::removeAresta(int inicio, int fim) {
  * @return
  */
 bool Grafo::vazio() {
-    return lista == NULL;
+    return inicioLista == NULL;
 }
 
 /**
  * Imprime o grafo
  */
 void Grafo::print() {
-    No *no = lista;
+    No *no = inicioLista;
     Aresta *aresta;
 
     while (no) {
@@ -145,6 +147,9 @@ void Grafo::print() {
         }
         no = no->getProx();
     }
+
+    cout << "Ordem: " << getOrdem() << endl;
+    cout << "Grau: " << getGrau() << endl;
 }
 
 /**
@@ -170,6 +175,64 @@ void Grafo::removeArestas(No *no) {
     }
 }
 
+/**
+ * Retorna a ordem do grafo
+ * @return
+ */
+int Grafo::getOrdem() {
+    return tamanho;
+}
 
+/**
+ * Retorna o grau do grafo
+ * @return
+ */
+int Grafo::getGrau() {
+    int grau = 0, grauAtual;
+    No *no = inicioLista;
+    while(no){
+        if(no->getGrau() > grau)
+            grau = no->getGrau();
+        no = no->getProx();
+    }
+    return grau;
+}
 
+int Grafo::getGrauNo(int id) {
+    No *no = getNo(id);
+    if(no) return no->getGrau();
+    return 0;
+}
 
+No *Grafo::getNo(int id) {
+    No *no = inicioLista;
+    while(no){
+        if(no->getId() == id)
+            return no;
+    }
+    return nullptr;
+}
+
+int *Grafo::getSequenciaGraus() {
+    int* graus = new int[tamanho];
+    int i = 0;
+    No * no = inicioLista;
+    while(no){
+        graus[i]= no->getGrau();
+        cout << graus[i] << endl;
+        i++;
+        no = no->getProx();
+    }
+    return graus;
+}
+
+void Grafo::printSequenciaGraus() {
+    int *graus = getSequenciaGraus();
+
+    cout << "[";
+    for(int i = 0; i < tamanho; i++){
+        cout << graus[i] << (i+1 == tamanho ? "" : ",");
+    }
+    cout << "]" << endl;
+
+}

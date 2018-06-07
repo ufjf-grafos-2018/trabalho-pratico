@@ -39,6 +39,10 @@ Aresta.h
 /home/maxjf1/projetos/trabalho-pratico/main.cpp
 iostream
 -
+fstream
+-
+cstring
+-
 Grafo.h
 /home/maxjf1/projetos/trabalho-pratico/Grafo.h
 

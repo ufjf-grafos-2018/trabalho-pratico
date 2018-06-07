@@ -11,7 +11,7 @@
 class Grafo {
 private:
     int tamanho = 0;
-    No *lista = NULL;
+    No *inicioLista = NULL;
     bool digrafo = false;
     void init(int tamanho);
     void removeArestas(No *no);
@@ -29,6 +29,18 @@ public:
     void removeAresta(int inicio, int fim);
 
     bool vazio();
+
+    int getOrdem();
+
+    int getGrau();
+
+    int getGrauNo(int id);
+
+    No *getNo(int id);
+
+    int *getSequenciaGraus();
+
+    void printSequenciaGraus();
 
     void print();
 

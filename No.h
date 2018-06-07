@@ -12,9 +12,9 @@ class Aresta;
 
 class No {
 private:
-    int id;
+    int id, grau = 0;
     Aresta *arestas;
-    No *prox;
+    No *proxNo;
 public:
     No(int id);
 
@@ -27,6 +27,8 @@ public:
     void addAresta(No *destino, int peso);
 
     void addAresta(No *destino);
+
+    int getGrau() const;
 
     void removeAresta(No *destino);
 

@@ -13,11 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="84b3a392-2c3a-4f98-90c9-2fcb030d96f9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aresta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Aresta.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aresta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Aresta.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FASE1.md" beforeDir="false" afterPath="$PROJECT_DIR$/FASE1.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Grafo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grafo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Grafo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Grafo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/No.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/No.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/No.h" beforeDir="false" afterPath="$PROJECT_DIR$/No.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Aresta.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Aresta.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Grafo.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/Grafo.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/No.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/No.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/trabalho_grafos.dir/main.cpp.o" afterDir="false" />
@@ -38,8 +42,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="175">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -50,8 +54,11 @@
       <file leaf-file-name="Grafo.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Grafo.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="630">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#2#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,32 +66,10 @@
       <file leaf-file-name="Grafo.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Grafo.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="3420">
+              <caret line="228" column="31" selection-start-line="228" selection-start-column="12" selection-end-line="228" selection-end-column="31" />
               <folding>
                 <element signature="e#0#2#0" />
-                <element signature="e#122#152#0" />
-                <element signature="e#122#201#0" />
-                <element signature="e#231#280#0" />
-                <element signature="e#231#362#0" />
-                <element signature="e#400#430#0" />
-                <element signature="e#400#529#0" />
-                <element signature="e#586#611#0" />
-                <element signature="e#532#671#0" />
-                <element signature="e#784#816#0" />
-                <element signature="e#673#1130#0" />
-                <element signature="e#1132#1204#0" />
-                <element signature="e#1132#1699#0" />
-                <element signature="e#1916#2037#0" />
-                <element signature="e#1408#1888#0" />
-                <element signature="e#2537#2565#0" />
-                <element signature="e#1890#1939#0" />
-                <element signature="e#2633#2648#0" />
-                <element signature="e#1941#2311#0" />
-                <element signature="e#3032#3067#0" />
-                <element signature="e#3032#3488#0" />
-                <element signature="e#3147#3217#0" />
-                <element signature="e#3239#3266#0" />
               </folding>
             </state>
           </provider>
@@ -93,25 +78,28 @@
       <file leaf-file-name="No.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/No.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="525">
+              <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="No.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entrada.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/entrada.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="No.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/No.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            <state relative-caret-position="1005">
+              <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="16" />
               <folding>
                 <element signature="e#0#2#0" />
-                <element signature="e#131#182#0" />
-                <element signature="e#184#224#0" />
-                <element signature="e#226#270#0" />
-                <element signature="e#272#423#0" />
-                <element signature="e#425#487#0" />
-                <element signature="e#489#543#0" />
               </folding>
             </state>
           </provider>
@@ -120,17 +108,8 @@
       <file leaf-file-name="Aresta.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Aresta.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aresta.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aresta.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="240">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -142,6 +121,7 @@
       <find>grafo-&gt;addAresta(1,3, 20);</find>
       <find>arestas</find>
       <find>null</find>
+      <find>1</find>
     </findStrings>
     <replaceStrings>
       <replace>NULL</replace>
@@ -157,12 +137,13 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Vertice.h" />
         <option value="$PROJECT_DIR$/Aresta.cpp" />
-        <option value="$PROJECT_DIR$/Grafo.h" />
-        <option value="$PROJECT_DIR$/No.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Aresta.h" />
-        <option value="$PROJECT_DIR$/Grafo.cpp" />
         <option value="$PROJECT_DIR$/No.cpp" />
+        <option value="$PROJECT_DIR$/No.h" />
+        <option value="$PROJECT_DIR$/entrada.txt" />
+        <option value="$PROJECT_DIR$/Grafo.h" />
+        <option value="$PROJECT_DIR$/Grafo.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -181,6 +162,9 @@
     <option name="y" value="89" />
     <option name="width" value="974" />
     <option name="height" value="555" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -245,44 +229,36 @@
       <workItem from="1526925250526" duration="434000" />
       <workItem from="1526926956536" duration="1103000" />
       <workItem from="1528140983705" duration="11905000" />
+      <workItem from="1528312665414" duration="5185000" />
+      <workItem from="1528325368012" duration="688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18222000" />
+    <option name="totallyTimeSpent" value="24724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1366" height="740" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17991005" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1754123" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.44405594" />
       <window_info anchor="bottom" id="CMake" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50074965" side_tool="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3355372" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4283217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49925038" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32867134" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.57167834" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1754123" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="CMake" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32867134" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1958042" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3355372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.44405594" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,27 +267,144 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Grafo.cpp</url>
+          <line>215</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/br.ufjf/main.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="675">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/entradas/parametros.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.cpp">
+    <entry file="file://$PROJECT_DIR$/Grafo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="630">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Grafo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="228" column="31" selection-start-line="228" selection-start-column="12" selection-end-line="228" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="2" lean-forward="true" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entrada.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aresta.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grafo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grafo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aresta.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aresta.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br.ufjf/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/entradas/parametros.txt" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.cpp" />
     <entry file="file://$PROJECT_DIR$/FASE1.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -330,38 +423,12 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/entradas/parametros.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="181" selection-end-line="184" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Aresta.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Aresta.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Vertice.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Vertice.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/br.ufjf/entradas/parametros.txt" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.cpp" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Aresta.h" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Aresta.cpp" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Vertice.h" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Vertice.cpp" />
     <entry file="file://$PROJECT_DIR$/FASE1.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -380,23 +447,8 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br.ufjf/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/br.ufjf/grafo/Grafo.h" />
+    <entry file="file://$PROJECT_DIR$/br.ufjf/main.cpp" />
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -419,7 +471,7 @@
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#40#58#0" expanded="true" />
+            <element signature="e#0#2#0" />
           </folding>
         </state>
       </provider>
@@ -473,89 +525,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/No.h">
+    <entry file="file://$PROJECT_DIR$/Aresta.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="120">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aresta.cpp">
+    <entry file="file://$PROJECT_DIR$/Aresta.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="240">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/No.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grafo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grafo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="228" column="31" selection-start-line="228" selection-start-column="12" selection-end-line="228" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        <state relative-caret-position="175">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Grafo.h">
+    <entry file="file://$PROJECT_DIR$/entrada.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Aresta.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Grafo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#122#152#0" />
-            <element signature="e#122#201#0" />
-            <element signature="e#231#280#0" />
-            <element signature="e#231#362#0" />
-            <element signature="e#400#430#0" />
-            <element signature="e#400#529#0" />
-            <element signature="e#586#611#0" />
-            <element signature="e#532#671#0" />
-            <element signature="e#784#816#0" />
-            <element signature="e#673#1130#0" />
-            <element signature="e#1132#1204#0" />
-            <element signature="e#1132#1699#0" />
-            <element signature="e#1916#2037#0" />
-            <element signature="e#1408#1888#0" />
-            <element signature="e#2537#2565#0" />
-            <element signature="e#1890#1939#0" />
-            <element signature="e#2633#2648#0" />
-            <element signature="e#1941#2311#0" />
-            <element signature="e#3032#3067#0" />
-            <element signature="e#3032#3488#0" />
-            <element signature="e#3147#3217#0" />
-            <element signature="e#3239#3266#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/No.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#131#182#0" />
-            <element signature="e#184#224#0" />
-            <element signature="e#226#270#0" />
-            <element signature="e#272#423#0" />
-            <element signature="e#425#487#0" />
-            <element signature="e#489#543#0" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>

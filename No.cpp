@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include "No.h"
 
-No::No(int id) : id(id), prox(NULL), arestas(NULL) {}
+No::No(int id) : id(id), proxNo(NULL), arestas(NULL) {}
 
 void No::setProx(No *prox) {
-    No::prox = prox;
+    No::proxNo = prox;
 }
 
 int No::getId() const {
@@ -15,7 +15,7 @@ int No::getId() const {
 }
 
 No *No::getProx() const {
-    return prox;
+    return proxNo;
 }
 
 /**
@@ -27,6 +27,7 @@ void No::addAresta(No *destino, int peso) {
     Aresta *aresta = new Aresta(this, destino, peso);
     aresta->setProx(arestas);
     arestas = aresta;
+    grau++;
 }
 
 /**
@@ -60,4 +61,9 @@ void No::removeAresta(No *destino) {
         anterior = aresta;
         aresta = aresta->getProx();
     }
+    grau--;
+}
+
+int No::getGrau() const {
+    return grau;
 }

@@ -6,7 +6,7 @@
 desenvolver um Tipo Abstrato de Dados - TAD ou uma classe que implemente o conjunto de funcionalidades apresentados a seguir e outras a serem requeridas ao longo do curso.
 
 ### Orientações:
- - seu TAD deve ser capaz de representar grafos (possivelmente digrafos, ponderados ou não) utilizando lista de adjacência;
+ - seu TAD deve ser capaz de representar grafos (possivelmente digrafos, ponderados ou não) utilizando inicioLista de adjacência;
  - o código deve ser desenvolvido em linguagem C ou C++ e deve estar bem comentado (código sem documentação será penalizado na nota);
  - o programa principal que usará o TAD deve ler os dados do grafo (ou digrafo) a partir de arquivo texto, conforme  odelo indicado neste documento;
  - para cada funcionalidade solicitada, seu programa deve apresentar uma opção em um menu apresentado no display;

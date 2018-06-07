@@ -9,7 +9,7 @@ Aresta::Aresta( No *origem, No *destino, int peso) : peso(peso), origem(origem),
 Aresta::Aresta(No *origem, No *destino) : origem(origem), destino(destino), peso(0) {}
 
 void Aresta::setProx(Aresta *prox) {
-    Aresta::prox = prox;
+    Aresta::proxAresta = prox;
 }
 
 int Aresta::getPeso() const {
@@ -25,5 +25,5 @@ No *Aresta::getDestino() const {
 }
 
 Aresta *Aresta::getProx() const {
-    return prox;
+    return proxAresta;
 }

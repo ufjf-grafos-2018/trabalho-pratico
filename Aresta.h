@@ -14,7 +14,7 @@ private:
     int peso;
     No *origem;
     No *destino;
-    Aresta *prox;
+    Aresta *proxAresta;
 public:
     Aresta(No *origem, No *destino, int peso);
 
