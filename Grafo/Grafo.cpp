@@ -213,8 +213,10 @@ int Grafo::getGrauNo(int id) {
 No *Grafo::getNo(int id) {
     No *no = inicioLista;
     while(no){
-        if(no->getId() == id)
+        if(no->getId() == id){
             return no;
+        }
+        no = no->getProx();
     }
     return nullptr;
 }
