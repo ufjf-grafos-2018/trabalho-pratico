@@ -236,3 +236,78 @@ void Grafo::printSequenciaGraus() {
     cout << "]" << endl;
 
 }
+
+bool Grafo::kRegular(int k){
+    int *graus = getSequenciaGraus();
+    for (int i = 0; i < tamanho; ++i) {
+        if(k!=graus[i]){
+            cout << "Não é "<< k <<"-regular." << endl;
+            return false;
+        }
+    }
+    cout << "É "<< k <<"-regular." << endl;
+    return true;
+}
+
+bool Grafo::isCompleto(){
+    int *graus = getSequenciaGraus();
+    for (int i = 0; i < tamanho; ++i) {
+        if(graus[i] != tamanho-1){
+            cout << "O grafo não é completo." << endl;
+            return false;
+        }
+    }
+    cout << "O grafo é completo." << endl;
+    return true;
+
+}
+
+void Grafo::vizinhoAberto(int id){
+    No *noBuscado = getNo(id);
+    if(noBuscado){
+        Aresta *aresta = noBuscado->getArestas();
+        Grafo *grafoVizinho = new Grafo(noBuscado->getGrau());
+    while(aresta) {
+        No *aux = aresta->getDestino();
+        grafoVizinho->addNo(aux->getId());
+        Aresta *auxAresta = aux->getArestas();
+        while(auxAresta){
+            if(noBuscado->getId() != aux->getArestas()->getDestino()->getId()){
+            grafoVizinho->addAresta(aux->getId(),aux->getArestas()->getDestino()->getId(),aux->getArestas()->getPeso());
+            }
+            auxAresta = auxAresta->getProx();
+        }
+    aresta = aresta->getProx();
+    }
+        cout << "Grafo vizinho aberto " << endl;
+        grafoVizinho->print();
+    }else{
+        cout << "O nó não existe no grafo" << endl;
+    }
+
+
+}
+
+void Grafo::vizinhoFechado(int id){
+    No *noBuscado = getNo(id);
+    if(noBuscado){
+        Aresta *aresta = noBuscado->getArestas();
+        Grafo *grafoVizinho = new Grafo(noBuscado->getGrau());
+        while(aresta) {
+            No *aux = aresta->getDestino();
+            grafoVizinho->addNo(noBuscado);
+            Aresta *auxAresta = aux->getArestas();
+            while(auxAresta){
+                    grafoVizinho->addAresta(aux->getId(),aux->getArestas()->getDestino()->getId(),aux->getArestas()->getPeso());
+                auxAresta = auxAresta->getProx();
+            }
+            aresta = aresta->getProx();
+        }
+        cout << "Grafo vizinho fechado " << endl;
+        grafoVizinho->print();
+    }else{
+        cout << "O nó não existe no grafo" << endl;
+    }
+
+
+}

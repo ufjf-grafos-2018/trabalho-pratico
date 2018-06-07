@@ -40,6 +40,13 @@ public:
 
     int *getSequenciaGraus();
 
+    bool isCompleto();
+
+    bool kRegular(int id);
+
+    void vizinhoFechado(int id);
+
+    void vizinhoAberto(int id);
     void printSequenciaGraus();
 
     void print();

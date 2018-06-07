@@ -45,5 +45,13 @@ int main() {
 
     grafo->printSequenciaGraus();
 
+    grafo->isCompleto();
+
+    grafo->kRegular(5);
+
+    grafo->vizinhoAberto(5);
+
+    grafo->vizinhoFechado(5);
+
     return 0;
 }
