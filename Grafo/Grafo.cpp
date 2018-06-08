@@ -41,7 +41,7 @@ void Grafo::init(int tamanho) {
  */
 void Grafo::addNo(int id) {
     No *no = new No(id);
-    if (!vazio()) {
+    if (!isNulo()) {
         no->setProx(inicioLista);
     }
     inicioLista = no;
@@ -124,11 +124,19 @@ void Grafo::removeAresta(int inicio, int fim) {
 }
 
 /**
- * Se o grafo está vazio
+ * Se o grafo é nulo
  * @return
  */
-bool Grafo::vazio() {
+bool Grafo::isNulo() {
     return inicioLista == NULL;
+}
+
+/**
+ * Se o grafo é trivial
+ * @return
+ */
+bool Grafo::isTrivial() {
+    return inicioLista && inicioLista->getArestas() == NULL;
 }
 
 /**
@@ -138,18 +146,25 @@ void Grafo::print() {
     No *no = inicioLista;
     Aresta *aresta;
 
+    cout << "Ordem do grafo: " << getOrdem() << endl;
+    cout << "Grau do grafo: " << getGrau() << endl;
+    cout << "Vertices: " << endl << endl << "------" << endl << endl;
+
     while (no) {
         aresta = no->getArestas();
+        cout << "ID: \t" << no->getId() << endl;
+        cout << "Grau: \t" << no->getGrau()<< endl;
+        cout << "Arestas: " << endl;
+
         while (aresta) {
-            cout << aresta->getOrigem()->getId() << "=>" << aresta->getDestino()->getId() << ": " << aresta->getPeso()
+            cout << "\t=>" << aresta->getDestino()->getId() << ": " << aresta->getPeso()
                  << endl;
             aresta = aresta->getProx();
         }
         no = no->getProx();
+        cout << "------" << endl << endl;
     }
 
-    cout << "Ordem: " << getOrdem() << endl;
-    cout << "Grau: " << getGrau() << endl;
 }
 
 /**
@@ -219,6 +234,7 @@ No *Grafo::getNo(int id) {
     while (no) {
         if (no->getId() == id)
             return no;
+        no = no->getProx();
     }
     return nullptr;
 }
@@ -233,7 +249,6 @@ int *Grafo::getSequenciaGraus() {
     No *no = inicioLista;
     while (no) {
         graus[i] = no->getGrau();
-        cout << graus[i] << endl;
         i++;
         no = no->getProx();
     }
@@ -356,7 +371,6 @@ Grafo *Grafo::vizinhanca(int id, bool fechado) {
         }
         vizinhos[i] = NULL;
     }
-    vizinhanca->print();
     return vizinhanca;
 }
 

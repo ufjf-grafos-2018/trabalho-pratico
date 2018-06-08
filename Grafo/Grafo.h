@@ -19,6 +19,7 @@ private:
     void removeArestas(No *no);
 
     Grafo *vizinhanca(int id, bool fechado);
+
 public:
 
     Grafo() {};
@@ -35,7 +36,9 @@ public:
 
     void removeAresta(int inicio, int fim);
 
-    bool vazio();
+    bool isNulo();
+
+    bool isTrivial();
 
     int getOrdem();
 
@@ -59,9 +62,9 @@ public:
 
     void print();
 
-    Grafo* vizinhoFechado(int id);
+    Grafo *vizinhoFechado(int id);
 
-    Grafo* vizinhoAberto(int id);
+    Grafo *vizinhoAberto(int id);
 };
 
 
