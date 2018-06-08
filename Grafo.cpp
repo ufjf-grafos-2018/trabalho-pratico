@@ -312,7 +312,7 @@ bool Grafo::ehBipartido() {
                 while(arestaAux!=NULL)
              {
                 if (result[arestaAux->getDestino()->getId()-1] != -1) {
-                    available[result[arestaAux->getDestino()->getId()]] = true;
+                    available[result[arestaAux->getDestino()->getId()-1]] = true;
 
                 }
 
