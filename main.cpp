@@ -29,7 +29,7 @@ int main() {
     }
 
     fclose(arq);
-    grafo->print();
+//    grafo->print();
 
     ///xurumelos
 //    Grafo *grafo = new Grafo(5);
@@ -41,9 +41,17 @@ int main() {
 //    grafo->removeNo(3);
 //    grafo->removeAresta(5, 1);
 //    grafo->print();g
-    grafo->getGrau();
-
-    grafo->printSequenciaGraus();
+//    grafo->getGrau();
+//
+//    grafo->printSequenciaGraus();
+//
+//    grafo->isCompleto();
+//
+//    grafo->kRegular();
+//
+    grafo->vizinhoAberto(5);
+//
+//    grafo->vizinhoFechado(5);
 
     return 0;
 }

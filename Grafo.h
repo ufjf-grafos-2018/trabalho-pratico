@@ -13,9 +13,16 @@ private:
     int tamanho = 0;
     No *inicioLista = NULL;
     bool digrafo = false;
+
     void init(int tamanho);
+
     void removeArestas(No *no);
+
+    Grafo *vizinhanca(int id, bool fechado);
 public:
+
+    Grafo() {};
+
     Grafo(int tamanho);
 
     Grafo(int tamanho, bool digrafo);
@@ -40,10 +47,21 @@ public:
 
     int *getSequenciaGraus();
 
+    bool isCompleto();
+
+    int kRegular();
+
+    bool isKRegular(int k);
+
+    bool isKRegular();
+
     void printSequenciaGraus();
 
     void print();
 
+    Grafo* vizinhoFechado(int id);
+
+    Grafo* vizinhoAberto(int id);
 };
 
 

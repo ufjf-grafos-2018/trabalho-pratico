@@ -91,7 +91,7 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
 
     if (noInicio && noFim) {
         noInicio->addAresta(noFim, peso);
-        if(!digrafo){
+        if (!digrafo) {
             noFim->addAresta(noInicio, peso);
         }
     }
@@ -190,35 +190,49 @@ int Grafo::getOrdem() {
 int Grafo::getGrau() {
     int grau = 0, grauAtual;
     No *no = inicioLista;
-    while(no){
-        if(no->getGrau() > grau)
+    while (no) {
+        if (no->getGrau() > grau)
             grau = no->getGrau();
         no = no->getProx();
     }
     return grau;
 }
 
+/**
+ * Retorna grau de um Nó
+ * @param id ID do nó
+ * @return
+ */
 int Grafo::getGrauNo(int id) {
     No *no = getNo(id);
-    if(no) return no->getGrau();
+    if (no) return no->getGrau();
     return 0;
 }
 
+/**
+ * Obtém um nó
+ * @param id
+ * @return
+ */
 No *Grafo::getNo(int id) {
     No *no = inicioLista;
-    while(no){
-        if(no->getId() == id)
+    while (no) {
+        if (no->getId() == id)
             return no;
     }
     return nullptr;
 }
 
+/**
+ * Obtém a sequência de graus do grafo
+ * @return
+ */
 int *Grafo::getSequenciaGraus() {
-    int* graus = new int[tamanho];
+    int *graus = new int[tamanho];
     int i = 0;
-    No * no = inicioLista;
-    while(no){
-        graus[i]= no->getGrau();
+    No *no = inicioLista;
+    while (no) {
+        graus[i] = no->getGrau();
         cout << graus[i] << endl;
         i++;
         no = no->getProx();
@@ -226,13 +240,140 @@ int *Grafo::getSequenciaGraus() {
     return graus;
 }
 
+/**
+ * Imprime a sequencia de graus do grafo
+ */
 void Grafo::printSequenciaGraus() {
     int *graus = getSequenciaGraus();
 
     cout << "[";
-    for(int i = 0; i < tamanho; i++){
-        cout << graus[i] << (i+1 == tamanho ? "" : ",");
+    for (int i = 0; i < tamanho; i++) {
+        cout << graus[i] << (i + 1 == tamanho ? "" : ",");
     }
     cout << "]" << endl;
 
+}
+
+/**
+ * Obtém a K-regularidade do grafo ou -1 se não existir
+ * @return
+ */
+int Grafo::kRegular() {
+    int *graus = getSequenciaGraus();
+    int k = graus[0];
+    for (int i = 1; i < tamanho; ++i) {
+        if (k != graus[i]) {
+            //cout << "Não É K-regular" <<  endl;
+            return -1;
+        }
+    }
+    //cout << "É " << k << "-regular." << endl;
+    return k;
+}
+
+/**
+ * Informa se o grafo é K-regular, dado K
+ * @param k
+ * @return
+ */
+bool Grafo::isKRegular(int k) {
+    return kRegular() == k;
+}
+
+/**
+ * Informa se o grafo é K-regular
+ * @return
+ */
+bool Grafo::isKRegular() {
+    return kRegular() >= 0;
+}
+
+/**
+ * Informa se o grafo é completo
+ * @return
+ */
+bool Grafo::isCompleto() {
+    int *graus = getSequenciaGraus();
+    for (int i = 0; i < tamanho; ++i) {
+        if (graus[i] != tamanho - 1) {
+//            cout << "O grafo não é completo." << endl;
+            return false;
+        }
+    }
+//    cout << "O grafo é completo." << endl;
+    return true;
+
+}
+
+/**
+ * retorna a vizinhança de um nó
+ * @param id ID do nó
+ * @param fechado se é vizinhança fechada ou aberta
+ * @return
+ */
+Grafo *Grafo::vizinhanca(int id, bool fechado) {
+    No *noBuscado = getNo(id);
+
+    if (!noBuscado) {
+        cout << "No " << id << "nao encontrado!";
+        return NULL;
+    }
+
+    int i = 0, tamanhoVizinhos = noBuscado->getGrau();
+
+    if (fechado)
+        tamanhoVizinhos++;
+
+    No **vizinhos = new No *[tamanhoVizinhos], *noAux;
+    Grafo *vizinhanca = new Grafo();
+    Aresta *arestaAux = noBuscado->getArestas();
+
+    if (fechado) {
+        vizinhanca->addNo(noBuscado->getId());
+        vizinhos[0] = noBuscado;
+        i = 1;
+    }
+
+    while (arestaAux) {
+        vizinhanca->addNo(arestaAux->getDestino()->getId());
+        vizinhos[i] = arestaAux->getDestino();
+        arestaAux = arestaAux->getProx();
+        i++;
+    }
+
+    for (i = 0; i < tamanhoVizinhos; i++) {
+        noAux = vizinhos[i];
+        arestaAux = noAux->getArestas();
+        while (arestaAux) {
+
+            for (int j = 0; j < tamanhoVizinhos; j++) {
+                if (vizinhos[j] && arestaAux->getDestino() == vizinhos[j]) {
+                    vizinhanca->addAresta(arestaAux->getOrigem()->getId(), arestaAux->getDestino()->getId(),
+                                          arestaAux->getPeso());
+                }
+            }
+            arestaAux = arestaAux->getProx();
+        }
+        vizinhos[i] = NULL;
+    }
+    vizinhanca->print();
+    return vizinhanca;
+}
+
+/**
+ * Obtém a vizinhança fechada de um nó
+ * @param id
+ * @return
+ */
+Grafo *Grafo::vizinhoFechado(int id) {
+    return vizinhanca(id, true);
+}
+
+/**
+ * Obtém a vizinhança aberta de um nó
+ * @param id
+ * @return
+ */
+Grafo *Grafo::vizinhoAberto(int id) {
+    return vizinhanca(id, false);
 }
