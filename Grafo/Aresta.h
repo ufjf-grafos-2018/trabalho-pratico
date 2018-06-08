@@ -20,6 +20,8 @@ public:
 
     Aresta(No *origem, No *destino);
 
+    Aresta();
+
     void setProx(Aresta *prox);
 
     int getPeso() const;

@@ -391,3 +391,111 @@ Grafo *Grafo::vizinhoFechado(int id) {
 Grafo *Grafo::vizinhoAberto(int id) {
     return vizinhanca(id, false);
 }
+
+bool Grafo::multigrafo() {
+
+    No *auxNo = this->inicioLista;
+    Aresta *auxAresta;
+    Aresta *aux;
+    int id;
+
+    while(auxNo->getProx() != NULL)
+    {
+        auxAresta= auxNo->getArestas();
+
+        while(auxAresta !=NULL){
+            aux=auxAresta->getProx();
+            id = auxAresta->getDestino()->getId();
+            while(aux !=NULL){
+                if(id == aux->getDestino()->getId()) {
+                    cout<<"ID: "<< id<<"AUX: "<< aux->getDestino()->getId()<<endl;
+                    return false;
+                }
+
+                aux = aux->getProx();
+
+            }
+            auxAresta= auxAresta->getProx();
+        }
+
+        auxNo = auxNo->getProx();
+    }
+
+    return true;
+
+
+}
+
+No *Grafo::getInicioLista() const {
+    return inicioLista;
+}
+
+
+bool Grafo::ehBipartido() {
+
+        No *noAux = getInicioLista();
+        Aresta *arestaAux = noAux->getArestas();
+        int  V = this->tamanho;
+        int result[V];
+
+
+        result[0]  = 0;
+
+
+        for (int u = 1; u < V; u++)
+            result[u] = -1;
+
+
+        bool available[V];
+        for (int cr = 1; cr < V; cr++)
+            available[cr] = false;
+
+
+        while(noAux !=NULL)
+        {
+
+                arestaAux = noAux->getArestas();
+                while(arestaAux!=NULL)
+             {
+                if (result[arestaAux->getDestino()->getId()-1] != -1) {
+                    available[result[arestaAux->getDestino()->getId()-1]] = true;
+
+                }
+
+                arestaAux = arestaAux->getProx();
+            }
+
+            int cr;
+            for (cr = 0; cr < V; cr++)
+                if (available[cr] == false)
+                    break;
+
+            result[noAux->getId()] = cr;
+
+
+            arestaAux = noAux->getArestas();
+            while(arestaAux!=NULL){
+                if (result[arestaAux->getDestino()->getId()-1] != -1)
+                    available[arestaAux->getDestino()->getId()-1] = false;
+
+                arestaAux = arestaAux->getProx();
+            }
+
+            noAux = noAux->getProx();
+        }
+
+
+        for (int u = V; u > 0; u--){
+
+
+            cout << "Vertice " << u << " --->  Cor " << result[u] << endl;
+        }
+
+
+        for (int u = V; u > 0;u--){
+            if (result[u]>1)
+                return false;
+
+        }
+    return true;
+}

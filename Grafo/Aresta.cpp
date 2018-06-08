@@ -27,3 +27,5 @@ No *Aresta::getDestino() const {
 Aresta *Aresta::getProx() const {
     return proxAresta;
 }
+
+Aresta::Aresta() {}

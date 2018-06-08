@@ -22,6 +22,10 @@ private:
 
 public:
 
+    bool ehBipartido();
+    No *getInicioLista() const;
+
+
     Grafo() {};
 
     Grafo(int tamanho);
@@ -43,6 +47,8 @@ public:
     int getOrdem();
 
     int getGrau();
+
+    bool multigrafo();
 
     int getGrauNo(int id);
 

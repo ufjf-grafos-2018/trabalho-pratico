@@ -4,37 +4,6 @@
 #include "Interface.h"
 
 /**
- * Gera um grafo a partir da leitura de um arquivo
- * @param filePath caminho relativo ou absoluto do arquivo
- * @return
- */
-Grafo *Interface::getGrafoByFile(string filePath) {
-    Grafo *grafo;
-    int grauGrafo, v1, v2, p;
-    char *url;
-    FILE *arq;
-
-    ifstream file(filePath);
-    url = new char[filePath.length() + 1];
-    strcpy(url, filePath.c_str());
-
-    arq = fopen(url, "r");
-    if (arq == NULL) {
-        printf("Erro, nao foi possivel abrir o arquivo\n");
-        return NULL;
-    } else
-        fscanf(arq, "%d", &grauGrafo);
-
-    grafo = new Grafo(grauGrafo);
-
-    while ((fscanf(arq, "%d %d %d\n", &v1, &v2, &p)) != EOF)
-        grafo->addAresta(v1, v2, p);
-
-    fclose(arq);
-    return grafo;
-}
-
-/**
  * Inicializa menu interativo
  * @param grafo
  */
