@@ -3,6 +3,8 @@
 //
 #include <stdio.h>
 #include <iostream>
+#include <queue>
+#include <list>
 
 #include "Grafo.h"
 
@@ -280,4 +282,74 @@ bool Grafo::multigrafo() {
 
 No *Grafo::getInicioLista() const {
     return inicioLista;
+}
+
+
+bool Grafo::ehBipartido() {
+
+        No *noAux = getInicioLista();
+        Aresta *arestaAux = noAux->getArestas();
+        int  V = this->tamanho;
+        int result[V];
+
+
+        result[0]  = 0;
+
+
+        for (int u = 1; u < V; u++)
+            result[u] = -1;
+
+
+        bool available[V];
+        for (int cr = 1; cr < V; cr++)
+            available[cr] = false;
+
+
+        while(noAux !=NULL)
+        {
+
+                arestaAux = noAux->getArestas();
+                while(arestaAux!=NULL)
+             {
+                if (result[arestaAux->getDestino()->getId()-1] != -1) {
+                    available[result[arestaAux->getDestino()->getId()]] = true;
+
+                }
+
+                arestaAux = arestaAux->getProx();
+            }
+
+            int cr;
+            for (cr = 0; cr < V; cr++)
+                if (available[cr] == false)
+                    break;
+
+            result[noAux->getId()] = cr;
+
+
+            arestaAux = noAux->getArestas();
+            while(arestaAux!=NULL){
+                if (result[arestaAux->getDestino()->getId()-1] != -1)
+                    available[arestaAux->getDestino()->getId()-1] = false;
+
+                arestaAux = arestaAux->getProx();
+            }
+
+            noAux = noAux->getProx();
+        }
+
+
+        for (int u = V; u > 0; u--){
+
+
+            cout << "Vertice " << u << " --->  Cor " << result[u] << endl;
+        }
+
+
+        for (int u = V; u > 0;u--){
+            if (result[u]>1)
+                return false;
+
+        }
+    return true;
 }

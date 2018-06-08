@@ -17,6 +17,7 @@ private:
     void removeArestas(No *no);
 public:
 
+    bool ehBipartido();
     No *getInicioLista() const;
 
     Grafo(int tamanho);
