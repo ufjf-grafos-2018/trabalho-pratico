@@ -2,7 +2,7 @@
 // Created by maxjf1 on 08/06/18.
 //
 #include <string>
-#include "Grafo/Grafo.h"
+#include "../Grafo/Grafo.h"
 
 #ifndef TRABALHO_GRAFOS_INTERFACE_H
 #define TRABALHO_GRAFOS_INTERFACE_H
@@ -15,9 +15,7 @@ class Interface {
     static void limpaTela();
 
 public:
-     static Grafo* getGrafoByFile(string filePath);
      static void iniciaMenu(Grafo *grafo);
-
 };
 
 
