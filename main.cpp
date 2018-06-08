@@ -1,35 +1,33 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "Grafo.h"
+#include "Grafo/Grafo.h"
+#include "IO/Interface.h"
 
 #include "IO/ManipuladorArquivo.h"
 
 using namespace std;
 
-int main(int argc, char** argv) {
+string nomeArquivoEntrada;
+Grafo *grafo;
 
-    if(argc != 3)
-    {
-        cout<<"Parâmetros errados: "<<endl<<"USO: "<< argv[0]<<" <arquivoEntrada.txt> <arquivoSaida.txt>"<<endl;
+int main(int argc, char **argv) {
+
+    if (argc != 3) {
+        cout << "Parâmetros errados: " << endl << "USO: " << argv[0] << " <arquivoEntrada.txt> <arquivoSaida.txt>"
+             << endl;
         return 1;
     }
-    string nomeArquivoEntrada =argv[1];
 
+    nomeArquivoEntrada = argv[1];
 
-    ManipuladorArquivo manipula;
-
-    Grafo *grafo = manipula.leitor(nomeArquivoEntrada);
+    grafo = ManipuladorArquivo::leitor(nomeArquivoEntrada);
 
     grafo->print();
 
+    Interface::iniciaMenu(grafo);
 
-   grafo->getGrauNo(5);
-
-
-   cout<<grafo->ehBipartido();
-
-   manipula.escreve(argv[2],grafo);
+    ManipuladorArquivo::escreve(argv[2], grafo);
 
     return 0;
 }

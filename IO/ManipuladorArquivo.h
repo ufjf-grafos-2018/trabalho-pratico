@@ -5,14 +5,17 @@
 #ifndef TRABALHO_GRAFOS_MANIPULADORARQUIVO_H
 #define TRABALHO_GRAFOS_MANIPULADORARQUIVO_H
 
-#include "../Grafo.h"
+
+#include "../Grafo/Grafo.h"
 
 using namespace std;
+
 class ManipuladorArquivo {
 
 public:
-    Grafo* leitor(string entrada);
-    void escreve(char *saida, Grafo *grafo);
+    static Grafo *leitor(string entrada);
+
+    static void escreve(char *saida, Grafo *grafo);
 };
 
 

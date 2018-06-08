@@ -10,23 +10,27 @@
 
 using namespace std;
 
-Grafo * ManipuladorArquivo::leitor(string entrada) {
+/**
+ * Gera um grafo a partir da leitura de um arquivo
+ * @param entrada caminho relativo ou absoluto do arquivo
+ * @return
+ */
+Grafo *ManipuladorArquivo::leitor(string entrada) {
     Grafo *grafo;
-    int grauGrafo,v1, v2, p;
+    int grauGrafo, v1, v2, p;
 
     ifstream file(entrada);
     char *url = new char[entrada.length() + 1];
-    strcpy(url, entrada.c_str());
-
     FILE *arq;
 
+    strcpy(url, entrada.c_str());
     arq = fopen(url, "r");
     if (arq == NULL)
         printf("Erro, nao foi possivel abrir o arquivo\n");
     else
 
         fscanf(arq, "%d", &grauGrafo);
-        grafo = new Grafo(grauGrafo, true);
+    grafo = new Grafo(grauGrafo, true);
 
     while ((fscanf(arq, "%d %d %d\n", &v1, &v2, &p)) != EOF) {
 
@@ -38,7 +42,7 @@ Grafo * ManipuladorArquivo::leitor(string entrada) {
     return grafo;
 }
 
-void ManipuladorArquivo::escreve(char *saida,Grafo *grafo){
+void ManipuladorArquivo::escreve(char *saida, Grafo *grafo) {
 
     FILE *arq;
     int i;
@@ -46,8 +50,8 @@ void ManipuladorArquivo::escreve(char *saida,Grafo *grafo){
 
     arq = fopen(saida, "wt");
 
-    if(arq ==NULL){
-        cout<<"Falha ao criar o arquivo"<<endl;
+    if (arq == NULL) {
+        cout << "Falha ao criar o arquivo" << endl;
         return;
     }
     No *no = grafo->getInicioLista();
@@ -57,10 +61,10 @@ void ManipuladorArquivo::escreve(char *saida,Grafo *grafo){
         aresta = no->getArestas();
         while (aresta) {
 
-            result = fprintf(arq, "%d %d %d\n", aresta->getOrigem()->getId(), aresta->getDestino()->getId(), aresta->getPeso() );
-            if(result == EOF)
-            {
-                cout<<"Erro na gravação"<< endl;
+            result = fprintf(arq, "%d %d %d\n", aresta->getOrigem()->getId(), aresta->getDestino()->getId(),
+                             aresta->getPeso());
+            if (result == EOF) {
+                cout << "Erro na gravação" << endl;
             }
             aresta = aresta->getProx();
         }

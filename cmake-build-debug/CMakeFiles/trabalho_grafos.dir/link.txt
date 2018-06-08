@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/trabalho_grafos.dir/main.cpp.o CMakeFiles/trabalho_grafos.dir/Grafo.cpp.o CMakeFiles/trabalho_grafos.dir/No.cpp.o CMakeFiles/trabalho_grafos.dir/Aresta.cpp.o  -o trabalho_grafos 
