@@ -49,7 +49,7 @@ int main() {
 //
 //    grafo->kRegular();
 //
-    grafo->vizinhoAberto(5, false);
+    grafo->vizinhoAberto(5);
 //
 //    grafo->vizinhoFechado(5);
 

@@ -8,9 +8,6 @@
 
 using namespace std;
 
-
-Grafo::Grafo() {}
-
 /**
  * Construtor
  * @param tamanho Tamanho do grafo
@@ -201,12 +198,22 @@ int Grafo::getGrau() {
     return grau;
 }
 
+/**
+ * Retorna grau de um Nó
+ * @param id ID do nó
+ * @return
+ */
 int Grafo::getGrauNo(int id) {
     No *no = getNo(id);
     if (no) return no->getGrau();
     return 0;
 }
 
+/**
+ * Obtém um nó
+ * @param id
+ * @return
+ */
 No *Grafo::getNo(int id) {
     No *no = inicioLista;
     while (no) {
@@ -216,6 +223,10 @@ No *Grafo::getNo(int id) {
     return nullptr;
 }
 
+/**
+ * Obtém a sequência de graus do grafo
+ * @return
+ */
 int *Grafo::getSequenciaGraus() {
     int *graus = new int[tamanho];
     int i = 0;
@@ -229,6 +240,9 @@ int *Grafo::getSequenciaGraus() {
     return graus;
 }
 
+/**
+ * Imprime a sequencia de graus do grafo
+ */
 void Grafo::printSequenciaGraus() {
     int *graus = getSequenciaGraus();
 
@@ -240,6 +254,10 @@ void Grafo::printSequenciaGraus() {
 
 }
 
+/**
+ * Obtém a K-regularidade do grafo ou -1 se não existir
+ * @return
+ */
 int Grafo::kRegular() {
     int *graus = getSequenciaGraus();
     int k = graus[0];
@@ -253,14 +271,27 @@ int Grafo::kRegular() {
     return k;
 }
 
+/**
+ * Informa se o grafo é K-regular, dado K
+ * @param k
+ * @return
+ */
 bool Grafo::isKRegular(int k) {
     return kRegular() == k;
 }
 
+/**
+ * Informa se o grafo é K-regular
+ * @return
+ */
 bool Grafo::isKRegular() {
     return kRegular() >= 0;
 }
 
+/**
+ * Informa se o grafo é completo
+ * @return
+ */
 bool Grafo::isCompleto() {
     int *graus = getSequenciaGraus();
     for (int i = 0; i < tamanho; ++i) {
@@ -274,12 +305,18 @@ bool Grafo::isCompleto() {
 
 }
 
-void Grafo::vizinhoAberto(int id, bool fechado) {
+/**
+ * retorna a vizinhança de um nó
+ * @param id ID do nó
+ * @param fechado se é vizinhança fechada ou aberta
+ * @return
+ */
+Grafo *Grafo::vizinhanca(int id, bool fechado) {
     No *noBuscado = getNo(id);
 
-    if (!noBuscado){
+    if (!noBuscado) {
         cout << "No " << id << "nao encontrado!";
-        return;
+        return NULL;
     }
 
     int i = 0, tamanhoVizinhos = noBuscado->getGrau();
@@ -320,4 +357,23 @@ void Grafo::vizinhoAberto(int id, bool fechado) {
         vizinhos[i] = NULL;
     }
     vizinhanca->print();
+    return vizinhanca;
+}
+
+/**
+ * Obtém a vizinhança fechada de um nó
+ * @param id
+ * @return
+ */
+Grafo *Grafo::vizinhoFechado(int id) {
+    return vizinhanca(id, true);
+}
+
+/**
+ * Obtém a vizinhança aberta de um nó
+ * @param id
+ * @return
+ */
+Grafo *Grafo::vizinhoAberto(int id) {
+    return vizinhanca(id, false);
 }
