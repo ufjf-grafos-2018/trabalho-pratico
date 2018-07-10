@@ -7,7 +7,7 @@
 
 
 #include "No.h"
-#include "ListaNo.h"
+#include "../Lista/ListaNo.h"
 
 class Grafo {
 private:

@@ -6,7 +6,7 @@
 #define TRABALHO_GRAFOS_LNITEM_H
 
 
-#include "No.h"
+#include "../Grafo/No.h"
 
 class ListaNoItem {
 private:

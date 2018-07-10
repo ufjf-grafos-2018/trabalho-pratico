@@ -3,7 +3,7 @@
 //
 
 #include "Grafo.h"
-#include "ListaNo.h"
+#include "../Lista/ListaNo.h"
 #include <math.h>
 #include <limits>
 #include <vector>

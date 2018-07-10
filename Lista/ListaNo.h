@@ -5,7 +5,7 @@
 #ifndef TRABALHO_GRAFOS_LISTANO_H
 #define TRABALHO_GRAFOS_LISTANO_H
 
-#include "No.h"
+#include "../Grafo/No.h"
 #include "ListaNoItem.h"
 
 
