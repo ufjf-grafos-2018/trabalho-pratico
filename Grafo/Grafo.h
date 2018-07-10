@@ -82,7 +82,9 @@ public:
 
     void validaCor(No * no, int *cor, int pos, int *ultimaCor);
 
-    void coloracaoGulosoRand();
+    void coloracaoGulosoRand(float alfa);
+
+    int posRand(float alfa);
 
 
 };

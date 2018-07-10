@@ -119,4 +119,31 @@ void Grafo::validaCor(No *no, int cores[], int pos, int *ultimaCor) {
 
 }
 
+void Grafo::coloracaoGulosoRand(float alfa) {
+    int i;
+    int ordem = this->tamanho;
+    int bestResult =0;
+    int ultimaCor = 1;
+
+    int cores[ordem];
+    for (i = 0; i < ordem; i++) {
+
+        cores[i] = -1;
+    }
+
+
+}
+
+int Grafo::posRand(float alfa) {
+
+    srand( (unsigned)time(NULL) );
+
+
+    int max = (int) (alfa*tamanho);
+    if (max == 0) return 0;
+    int aleatorio = (int) rand() % max;
+    return aleatorio;
+
+}
+
 

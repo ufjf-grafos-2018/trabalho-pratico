@@ -49,6 +49,9 @@ int main(int argc, char **argv) {
 
     int val = grafo->coloracaoGuloso();
     cout<< "Numero de cores usadas: "<<val;
+
+    cout<<endl<<grafo->posRand(0.3);
+
     //Interface::iniciaMenu(grafo);
 
     ManipuladorArquivo::escreve(argv[2], grafo);
