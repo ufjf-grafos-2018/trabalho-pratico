@@ -7,6 +7,7 @@
 
 
 #include "No.h"
+#include "ListaNo.h"
 
 class Grafo {
 private:
@@ -23,6 +24,7 @@ private:
 public:
 
     bool ehBipartido();
+
     No *getInicioLista() const;
 
 
@@ -76,14 +78,15 @@ public:
 
     //-----------------------------------------------------Funções para coloração---------------------------------------------------------
 
-    void ordenaVetor(No* vet[]);
+    void ordenaVetor(No *vet[]);
 
     int coloracaoGuloso();
 
-    void validaCor(No * no, int *cor, int pos, int *ultimaCor);
+    void validaCor(No *no, int *cor, int pos, int *ultimaCor);
 
     void coloracaoGulosoRand();
 
+    ListaNo *listaOrdenadaGrau();
 
 };
 

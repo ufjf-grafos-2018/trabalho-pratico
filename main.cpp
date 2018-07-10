@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 
     grafo = ManipuladorArquivo::leitor(nomeArquivoEntrada);
 
-    grafo->print();
+//    grafo->print();
 
 
     /*No* vetNos[grafo->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
@@ -46,12 +46,20 @@ int main(int argc, char **argv) {
     }
 */
 
+//
+//    int val = grafo->coloracaoGuloso();
+//    cout<< "Numero de cores usadas: "<<val<< endl;
 
-    int val = grafo->coloracaoGuloso();
-    cout<< "Numero de cores usadas: "<<val;
+    ListaNo * lista = grafo->listaOrdenadaGrau();
+    int * graus = grafo->getSequenciaGraus();
+    for(int i = 0; i < lista->getSize(); i ++ ){
+        cout  << (graus[i] == lista->getNo(i)->getGrau() ? "true" : "error")<< endl;
+    }
     //Interface::iniciaMenu(grafo);
 
     ManipuladorArquivo::escreve(argv[2], grafo);
+
+
 
     return 0;
 }
