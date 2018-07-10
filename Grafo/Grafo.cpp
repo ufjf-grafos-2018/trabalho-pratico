@@ -98,6 +98,10 @@ void Grafo::addAresta(int inicio, int fim, int peso) {
 
 }
 
+void Grafo::addAresta(int inicio, int fim) {
+    addAresta(inicio, fim, 0);
+}
+
 /**
  * Remove Aresta do grafo
  * @param inicio ID do nó de origem
@@ -153,7 +157,7 @@ void Grafo::print() {
     while (no) {
         aresta = no->getArestas();
         cout << "ID: \t" << no->getId() << endl;
-        cout << "Grau: \t" << no->getGrau()<< endl;
+        cout << "Grau: \t" << no->getGrau() << endl;
         cout << "Arestas: " << endl;
 
         while (aresta) {
@@ -399,23 +403,22 @@ bool Grafo::multigrafo() {
     Aresta *aux;
     int id;
 
-    while(auxNo->getProx() != NULL)
-    {
-        auxAresta= auxNo->getArestas();
+    while (auxNo->getProx() != NULL) {
+        auxAresta = auxNo->getArestas();
 
-        while(auxAresta !=NULL){
-            aux=auxAresta->getProx();
+        while (auxAresta != NULL) {
+            aux = auxAresta->getProx();
             id = auxAresta->getDestino()->getId();
-            while(aux !=NULL){
-                if(id == aux->getDestino()->getId()) {
-                    cout<<"ID: "<< id<<"AUX: "<< aux->getDestino()->getId()<<endl;
+            while (aux != NULL) {
+                if (id == aux->getDestino()->getId()) {
+                    cout << "ID: " << id << "AUX: " << aux->getDestino()->getId() << endl;
                     return false;
                 }
 
                 aux = aux->getProx();
 
             }
-            auxAresta= auxAresta->getProx();
+            auxAresta = auxAresta->getProx();
         }
 
         auxNo = auxNo->getProx();
@@ -433,69 +436,67 @@ No *Grafo::getInicioLista() const {
 
 bool Grafo::ehBipartido() {
 
-        No *noAux = getInicioLista();
-        Aresta *arestaAux = noAux->getArestas();
-        int  V = this->tamanho;
-        int result[V];
+    No *noAux = getInicioLista();
+    Aresta *arestaAux = noAux->getArestas();
+    int V = this->tamanho;
+    int result[V];
 
 
-        result[0]  = 0;
+    result[0] = 0;
 
 
-        for (int u = 1; u < V; u++)
-            result[u] = -1;
+    for (int u = 1; u < V; u++)
+        result[u] = -1;
 
 
-        bool available[V];
-        for (int cr = 1; cr < V; cr++)
-            available[cr] = false;
+    bool available[V];
+    for (int cr = 1; cr < V; cr++)
+        available[cr] = false;
 
 
-        while(noAux !=NULL)
-        {
+    while (noAux != NULL) {
 
-                arestaAux = noAux->getArestas();
-                while(arestaAux!=NULL)
-             {
-                if (result[arestaAux->getDestino()->getId()-1] != -1) {
-                    available[result[arestaAux->getDestino()->getId()-1]] = true;
+        arestaAux = noAux->getArestas();
+        while (arestaAux != NULL) {
+            if (result[arestaAux->getDestino()->getId() - 1] != -1) {
+                available[result[arestaAux->getDestino()->getId() - 1]] = true;
 
-                }
-
-                arestaAux = arestaAux->getProx();
             }
 
-            int cr;
-            for (cr = 0; cr < V; cr++)
-                if (available[cr] == false)
-                    break;
-
-            result[noAux->getId()] = cr;
-
-
-            arestaAux = noAux->getArestas();
-            while(arestaAux!=NULL){
-                if (result[arestaAux->getDestino()->getId()-1] != -1)
-                    available[arestaAux->getDestino()->getId()-1] = false;
-
-                arestaAux = arestaAux->getProx();
-            }
-
-            noAux = noAux->getProx();
+            arestaAux = arestaAux->getProx();
         }
 
+        int cr;
+        for (cr = 0; cr < V; cr++)
+            if (available[cr] == false)
+                break;
 
-        for (int u = V; u > 0; u--){
+        result[noAux->getId()] = cr;
 
 
-            cout << "Vertice " << u << " --->  Cor " << result[u] << endl;
+        arestaAux = noAux->getArestas();
+        while (arestaAux != NULL) {
+            if (result[arestaAux->getDestino()->getId() - 1] != -1)
+                available[arestaAux->getDestino()->getId() - 1] = false;
+
+            arestaAux = arestaAux->getProx();
         }
 
+        noAux = noAux->getProx();
+    }
 
-        for (int u = V; u > 0;u--){
-            if (result[u]>1)
-                return false;
 
-        }
+    for (int u = V; u > 0; u--) {
+
+
+        cout << "Vertice " << u << " --->  Cor " << result[u] << endl;
+    }
+
+
+    for (int u = V; u > 0; u--) {
+        if (result[u] > 1)
+            return false;
+
+    }
     return true;
 }

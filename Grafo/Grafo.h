@@ -11,7 +11,7 @@
 class Grafo {
 private:
     int tamanho = 0;
-    No *inicioLista = NULL;
+    No *inicioLista = nullptr;
     bool digrafo = false;
 
     void init(int tamanho);
@@ -37,6 +37,8 @@ public:
     void removeNo(int id);
 
     void addAresta(int inicio, int fim, int peso);
+
+    void addAresta(int inicio, int fim);
 
     void removeAresta(int inicio, int fim);
 
@@ -71,6 +73,18 @@ public:
     Grafo *vizinhoFechado(int id);
 
     Grafo *vizinhoAberto(int id);
+
+    //-----------------------------------------------------Funções para coloração---------------------------------------------------------
+
+    void ordenaVetor(No* vet[]);
+
+    int coloracaoGuloso();
+
+    void validaCor(No * no, int *cor, int pos, int *ultimaCor);
+
+    void coloracaoGulosoRand();
+
+
 };
 
 

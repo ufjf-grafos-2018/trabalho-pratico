@@ -25,7 +25,31 @@ int main(int argc, char **argv) {
 
     grafo->print();
 
-    Interface::iniciaMenu(grafo);
+
+    /*No* vetNos[grafo->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
+
+    No* aux = grafo->getInicioLista();
+    int i=0;
+    while(aux!=NULL){
+        vetNos[i] = aux;
+
+        aux = aux->getProx();
+
+        i++;
+
+    }
+
+    grafo->ordenaVetor(vetNos);
+
+    for(int p =0; p < grafo->getOrdem();p++){
+        cout<<"No: "<< vetNos[p]->getId()<< " Grau: " << vetNos[p]->getGrau()<<endl;
+    }
+*/
+
+
+    int val = grafo->coloracaoGuloso();
+    cout<< "Numero de cores usadas: "<<val;
+    //Interface::iniciaMenu(grafo);
 
     ManipuladorArquivo::escreve(argv[2], grafo);
 
