@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 
     grafo = ManipuladorArquivo::leitor(nomeArquivoEntrada);
 
-    grafo->print();
+//    grafo->print();
 
 
     /*No* vetNos[grafo->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau

@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <iostream>
+#include <algorithm>
 
 #include "Grafo.h"
 
@@ -256,6 +257,9 @@ int *Grafo::getSequenciaGraus() {
         i++;
         no = no->getProx();
     }
+    // Ordenação do array
+    sort(graus, graus +  tamanho, std::greater<int>());
+
     return graus;
 }
 

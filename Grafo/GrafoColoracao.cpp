@@ -3,6 +3,7 @@
 //
 
 #include "Grafo.h"
+#include "ListaNo.h"
 #include <math.h>
 #include <limits>
 #include <vector>
@@ -32,6 +33,7 @@ void Grafo::ordenaVetor(No *vet[]) {
     }
 
 }
+
 
 int Grafo::coloracaoGuloso() {
 
@@ -113,10 +115,31 @@ void Grafo::validaCor(No *no, int cores[], int pos, int *ultimaCor) {
         if (*ultimaCor < cor) {
             *ultimaCor = cor;
         }
-
     }
+}
 
+ListaNo *Grafo::listaOrdenadaGrau() {
+    ListaNo *lista = new ListaNo;
+    No *no = getInicioLista();
 
+    while (no) {
+        if (!lista->getInicio() || no->getGrau() >= lista->getInicio()->getContent()->getGrau())
+            lista->insert(no);
+        else {
+            ListaNoItem *item = lista->getInicio();
+            while (item) {
+                if(item->getContent()->getGrau() >=no->getGrau() && (!item->getProx() || no->getGrau() >= item->getProx()->getContent()->getGrau())){
+                    item->insert(no);
+                    break;
+                }
+                item = item->getProx();
+            }
+            if(!item)
+                lista->insertEnd(no);
+        }
+        no = no->getProx();
+    }
+    return lista;
 }
 
 void Grafo::coloracaoGulosoRand(float alfa) {
