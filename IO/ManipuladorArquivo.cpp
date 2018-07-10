@@ -30,11 +30,11 @@ Grafo *ManipuladorArquivo::leitor(string entrada) {
     else
 
         fscanf(arq, "%d", &grauGrafo);
-    grafo = new Grafo(grauGrafo, true);
+    grafo = new Grafo(grauGrafo, false);
 
-    while ((fscanf(arq, "%d %d %d\n", &v1, &v2, &p)) != EOF) {
+    while ((fscanf(arq, "%d %d\n", &v1, &v2)) != EOF) {
 
-        grafo->addAresta(v1, v2, p);
+        grafo->addAresta(v1, v2);
     }
 
     fclose(arq);
