@@ -1,7 +1,3 @@
-//
-// Created by maxjf1 on 10/07/18.
-//
-
 #include "ListaNo.h"
 
 ListaNo::ListaNo() {}
