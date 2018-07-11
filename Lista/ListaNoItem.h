@@ -32,6 +32,7 @@ public:
     ListaNoItem *remove(int index);
 
     int getSize();
+
 };
 
 

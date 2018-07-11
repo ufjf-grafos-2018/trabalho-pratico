@@ -39,12 +39,13 @@ int Grafo::coloracaoGuloso() {
 
     int ordem = this->tamanho;
     int ultimaCor = 1;
+    int i = 0;
 
 
-    No *vetNos[this->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
+   /* No *vetNos[this->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
 
     No *aux = this->getInicioLista();
-    int i = 0;
+
     while (aux != NULL) {
         vetNos[i] = aux;
 
@@ -54,7 +55,12 @@ int Grafo::coloracaoGuloso() {
 
     }
 
-    this->ordenaVetor(vetNos);
+  //  ListaNo *listaNoOrdenado = this->listaOrdenadaGrau();
+       this->ordenaVetor(vetNos);
+
+*/
+   ListaNo * listaNoOrdenado = insereNaLista();
+
 
     int cores[ordem];
     for (i = 0; i < ordem; i++) {
@@ -69,18 +75,17 @@ int Grafo::coloracaoGuloso() {
 
     while (pos < ordem) {
 
-        auxNo = vetNos[pos];
 
-        this->validaCor(auxNo, cores, pos, &ultimaCor);
+      //  auxNo = vetNos[pos];
+        auxNo = listaNoOrdenado->getInicio()->getContent();
 
+        this->validaCor(auxNo, cores, &ultimaCor);
+/*
         for (int p = 0; p < ordem; p++) {
             cout << p + 1 << " :" << cores[p] << endl;
-        }
-
-        cout << endl;
-
-
+        }*/
         pos++;
+        listaNoOrdenado->remove(auxNo->getId());
     }
 
     return ultimaCor + 1;
@@ -88,13 +93,11 @@ int Grafo::coloracaoGuloso() {
 
 }
 
-void Grafo::validaCor(No *no, int cores[], int pos, int *ultimaCor) {
+void Grafo::validaCor(No *no, int cores[], int *ultimaCor) {
     Aresta *arestaAux;
-
 
     int cor = 0;
     int cont = 0;
-
 
     if (cores[no->getId() - 1] == -1) {
 
@@ -128,13 +131,14 @@ ListaNo *Grafo::listaOrdenadaGrau() {
         else {
             ListaNoItem *item = lista->getInicio();
             while (item) {
-                if(item->getContent()->getGrau() >=no->getGrau() && (!item->getProx() || no->getGrau() >= item->getProx()->getContent()->getGrau())){
+                if (item->getContent()->getGrau() >= no->getGrau() &&
+                    (!item->getProx() || no->getGrau() >= item->getProx()->getContent()->getGrau())) {
                     item->insert(no);
                     break;
                 }
                 item = item->getProx();
             }
-            if(!item)
+            if (!item)
                 lista->insertEnd(no);
         }
         no = no->getProx();
@@ -143,30 +147,101 @@ ListaNo *Grafo::listaOrdenadaGrau() {
 }
 
 void Grafo::coloracaoGulosoRand(float alfa) {
-    int i;
-    int ordem = this->tamanho;
-    int bestResult =0;
-    int ultimaCor = 1;
 
-    int cores[ordem];
-    for (i = 0; i < ordem; i++) {
+    int bestResult = 0;
+    int iteracoes = 0;
 
-        cores[i] = -1;
+    while (iteracoes < 1) {
+
+        int ultimaCor = 1;
+        int i;
+        int ordem = this->tamanho;
+        int cores[ordem];
+        for (i = 0; i < ordem; i++) {
+
+            cores[i] = -1;
+        }
+
+        ListaNo * listaNoOrdenado = insereNaLista();
+        No *noAux;
+
+        while (listaNoOrdenado->getSize() > 0) {
+            noAux = listaNoOrdenado->getNo(posRand(alfa, listaNoOrdenado));
+
+            this->validaCor(noAux, cores, &ultimaCor);
+
+           /* for (int p = 0; p < ordem; p++) {
+                cout << p + 1 << " :" << cores[p] << endl;
+            }*/
+
+
+            listaNoOrdenado->remove(noAux->getId());
+
+        }
+        iteracoes++;
+        if(iteracoes ==0){
+            bestResult = ultimaCor+1;
+        }
+
+        if(ultimaCor > bestResult){
+            bestResult = ultimaCor+1;
+        }
+
+        cout<<"Ultima Cor: "<< ultimaCor<< endl;
+    }
+
+    cout<<"o numero de cores usadas foram: "<< bestResult<<endl;
+
+
+}
+
+int Grafo::posRand(float alfa, ListaNo *listaNo) {
+
+
+    srand((unsigned) time(NULL));
+    int tamanho =listaNo->getSize();
+
+
+
+    int max = (int) (alfa * tamanho);
+    if (max == 0) return 0;
+    int aleatorio = (int) rand() % max;
+
+    cout<<"Aleatorio: "<< aleatorio<<endl;
+    return aleatorio;
+
+
+}
+
+ListaNo* Grafo::insereNaLista() {
+
+
+    int i = 0;
+
+    No *vet[this->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
+    No *aux = this->getInicioLista();
+
+    while (aux != NULL) {
+        vet[i] = aux;
+
+        aux = aux->getProx();
+
+        i++;
+
+    }
+
+    //  ListaNo *listaNoOrdenado = this->listaOrdenadaGrau();
+    this->ordenaVetor(vet);
+
+
+    ListaNo * listaNo= new ListaNo();
+
+    for(int i=this->tamanho-1;i>=0;i--){
+        listaNo->insert(vet[i]);
     }
 
 
+
+    return listaNo;
 }
-
-int Grafo::posRand(float alfa) {
-
-    srand( (unsigned)time(NULL) );
-
-
-    int max = (int) (alfa*tamanho);
-    if (max == 0) return 0;
-    int aleatorio = (int) rand() % max;
-    return aleatorio;
-
-}
-
 

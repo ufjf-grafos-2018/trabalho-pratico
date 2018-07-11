@@ -27,8 +27,8 @@ ListaNoItem *ListaNoItem::get(int index) {
 
 void ListaNoItem::insert(No *no) {
     ListaNoItem *aux = new ListaNoItem(no);
-    aux->setProx(getProx());
-    setProx(aux);
+    aux->setProx(this->getProx());
+    this->setProx(aux);
 }
 
 void ListaNoItem::insertEnd(No *no) {
@@ -38,7 +38,9 @@ void ListaNoItem::insertEnd(No *no) {
         getProx()->insertEnd(no);
 }
 
-ListaNoItem::ListaNoItem(No *content) : content(content) {}
+ListaNoItem::ListaNoItem(No *content) {
+    this->content = content;
+}
 
 No *ListaNoItem::getNo(int index) {
     ListaNoItem *no = get(index);
@@ -46,10 +48,10 @@ No *ListaNoItem::getNo(int index) {
 }
 
 ListaNoItem *ListaNoItem::remove(int index) {
-    if (index == 0)
+    if (this->content->getId() == index)
         return getProx();
     if (getProx())
-        setProx(getProx()->remove(index - 1));
+        setProx(getProx()->remove(index));
     return this;
 }
 

@@ -82,14 +82,15 @@ public:
 
     int coloracaoGuloso();
 
-    void validaCor(No *no, int *cor, int pos, int *ultimaCor);
+    void validaCor(No *no, int *cor, int *ultimaCor);
 
     void coloracaoGulosoRand(float alfa);
 
-    int posRand(float alfa);
+    int posRand(float alfa, ListaNo *listaNo);
 
     ListaNo *listaOrdenadaGrau();
 
+    ListaNo *insereNaLista();
 };
 
 

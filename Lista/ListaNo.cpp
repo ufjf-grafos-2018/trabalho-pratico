@@ -16,8 +16,8 @@ void ListaNo::setInicio(ListaNoItem *inicio) {
 
 void ListaNo::insert(No *no) {
     ListaNoItem *item = new ListaNoItem(no);
-    item->setProx(getInicio());
-    setInicio(item);
+    item->setProx(this->getInicio());
+    this->setInicio(item);
 }
 
 void ListaNo::insertEnd(No *no) {
@@ -33,7 +33,7 @@ No *ListaNo::getNo(int index) {
 
 void ListaNo::remove(int index) {
     if (getInicio())
-        getInicio()->remove(index);
+        setInicio(getInicio()->remove(index));
 }
 
 int ListaNo::getSize() {
