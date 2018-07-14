@@ -9,6 +9,11 @@
 #include "No.h"
 #include "../Lista/ListaNo.h"
 
+struct Solucao{
+    double alpha;
+    int cores;
+};
+
 class Grafo {
 private:
     int tamanho = 0;
@@ -84,13 +89,19 @@ public:
 
     void validaCor(No *no, int *cor, int *ultimaCor);
 
-    void coloracaoGulosoRand(float alfa);
+    struct Solucao coloracaoGulosoRand(double alfa);
 
     int posRand(float alfa, ListaNo *listaNo);
 
     ListaNo *listaOrdenadaGrau();
 
     ListaNo *insereNaLista();
+
+    void validacao(No* no, int *cores, int *ultimaCor);
+
+    struct Solucao gulosoRandReativo(int max_itr, int bloco_itr);
+
+    int random(int tam, double *prob);
 };
 
 

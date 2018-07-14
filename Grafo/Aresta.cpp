@@ -22,7 +22,7 @@ No *Aresta::getOrigem() const {
 
 No *Aresta::getDestino() const {
     return destino;
-}
+ }
 
 Aresta *Aresta::getProx() const {
     return proxAresta;

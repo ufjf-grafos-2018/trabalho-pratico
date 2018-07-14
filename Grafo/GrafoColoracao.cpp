@@ -42,23 +42,6 @@ int Grafo::coloracaoGuloso() {
     int i = 0;
 
 
-   /* No *vetNos[this->getOrdem()]; // vetor com a ordem dos nós a serem visitados, ordenados pelo grau
-
-    No *aux = this->getInicioLista();
-
-    while (aux != NULL) {
-        vetNos[i] = aux;
-
-        aux = aux->getProx();
-
-        i++;
-
-    }
-
-  //  ListaNo *listaNoOrdenado = this->listaOrdenadaGrau();
-       this->ordenaVetor(vetNos);
-
-*/
    ListaNo * listaNoOrdenado = insereNaLista();
 
 
@@ -80,15 +63,36 @@ int Grafo::coloracaoGuloso() {
         auxNo = listaNoOrdenado->getInicio()->getContent();
 
         this->validaCor(auxNo, cores, &ultimaCor);
-/*
-        for (int p = 0; p < ordem; p++) {
+       /* for (int p = 0; p < ordem; p++) {
             cout << p + 1 << " :" << cores[p] << endl;
+
         }*/
         pos++;
         listaNoOrdenado->remove(auxNo->getId());
     }
 
-    return ultimaCor + 1;
+  /*  int vet[ultimaCor];
+    int soma = 0;
+
+    for (int k = 0; k < ultimaCor; ++k) {
+        vet[k]= -1;
+    }
+
+    for (int j = 0; j < this->tamanho; ++j) {
+
+            vet[cores[j]] = 1;
+
+    }
+
+    for (int l = 0; l <ultimaCor ; ++l) {
+        if(vet[l] == 1)
+            soma++;
+    }*/
+
+    cout<<"Cores Usadas: "<<ultimaCor<<endl;
+
+   // cout<<"Cores: "<<soma<<endl;
+    return ultimaCor;
 
 
 }
@@ -96,7 +100,7 @@ int Grafo::coloracaoGuloso() {
 void Grafo::validaCor(No *no, int cores[], int *ultimaCor) {
     Aresta *arestaAux;
 
-    int cor = 0;
+    int cor = 1;
     int cont = 0;
 
     if (cores[no->getId() - 1] == -1) {
@@ -108,6 +112,7 @@ void Grafo::validaCor(No *no, int cores[], int *ultimaCor) {
 
                 if (cores[arestaAux->getDestino()->getId() - 1] == cor) {
                     cor++;
+                    break;
                 }
 
                 arestaAux = arestaAux->getProx();
@@ -146,14 +151,16 @@ ListaNo *Grafo::listaOrdenadaGrau() {
     return lista;
 }
 
-void Grafo::coloracaoGulosoRand(float alfa) {
+struct Solucao Grafo::coloracaoGulosoRand(double alfa) {
 
-    int bestResult = 0;
+    struct Solucao bestResult;
+    bestResult.alpha =alfa;
     int iteracoes = 0;
+
 
     while (iteracoes < 1) {
 
-        int ultimaCor = 1;
+        int ultimaCor = 0;
         int i;
         int ordem = this->tamanho;
         int cores[ordem];
@@ -178,19 +185,22 @@ void Grafo::coloracaoGulosoRand(float alfa) {
             listaNoOrdenado->remove(noAux->getId());
 
         }
-        iteracoes++;
+
+
         if(iteracoes ==0){
-            bestResult = ultimaCor+1;
+            bestResult.cores = ultimaCor;
         }
 
-        if(ultimaCor > bestResult){
-            bestResult = ultimaCor+1;
+        if(ultimaCor < bestResult.cores){
+            bestResult.cores = ultimaCor;
         }
 
-        cout<<"Ultima Cor: "<< ultimaCor<< endl;
+        iteracoes++;
+
+
     }
 
-    cout<<"o numero de cores usadas foram: "<< bestResult<<endl;
+    return bestResult;
 
 
 }
@@ -198,7 +208,7 @@ void Grafo::coloracaoGulosoRand(float alfa) {
 int Grafo::posRand(float alfa, ListaNo *listaNo) {
 
 
-    srand((unsigned) time(NULL));
+
     int tamanho =listaNo->getSize();
 
 
@@ -207,7 +217,7 @@ int Grafo::posRand(float alfa, ListaNo *listaNo) {
     if (max == 0) return 0;
     int aleatorio = (int) rand() % max;
 
-    cout<<"Aleatorio: "<< aleatorio<<endl;
+
     return aleatorio;
 
 
@@ -244,4 +254,140 @@ ListaNo* Grafo::insereNaLista() {
 
     return listaNo;
 }
+//Algoritmo Guloso Rand Reativo
+struct Solucao Grafo::gulosoRandReativo(int max_itr, int bloco_itr) {
+
+    struct Solucao melhor,aux;
+    melhor.cores = 99999;
+    int indice;
+    double prob[10];
+    double alphas[10];
+    int valoresEncontrados[10];
+    double media[10];
+    int nAlfa[10];
+    double q[10];
+    double alpha = 0.0;
+    int embloco =1;
+    double somQ = 0.0;
+
+
+    for (int i=0; i<10; i++){
+        prob[i] = 1/10;
+        alphas[i] = i*0.05;
+        valoresEncontrados[i] = 0;
+        media[i] = 0.0;
+        nAlfa[i] = 0;
+        q[i] = 0.0;
+    }
+
+    for(int it = 0 ; it<max_itr; it++){
+
+        if(it<10){
+            alpha = alphas[it];
+            nAlfa[it]++;
+        }
+        else{
+            indice = random(10, alphas);
+            alpha = alphas[indice];
+            nAlfa[indice]++;
+        }
+        aux = coloracaoGulosoRand(alpha);
+        valoresEncontrados[indice]+=aux.cores;
+
+        if (aux.cores <= melhor.cores) {
+            melhor = aux;
+        }
+
+        if(it == bloco_itr*embloco)
+        {
+            embloco++;
+            for(int i = 0; i<10; i++)
+            {
+
+                if(nAlfa[i]!= 0)
+                {
+                    media[i] = (valoresEncontrados[i]*1.0)/nAlfa[i];
+                    q[i] = (melhor.cores*1.0)/media[i];
+                }
+                else
+                {
+                    media[i] = 0.0;
+                    q[i] = 0.0;
+                }
+            }
+            somQ = 0.0;
+            for(int i = 0; i<10;i++)
+                somQ = q[i] + somQ;
+            for(int i = 0; i<10; i++)
+            {
+                if(somQ!= 0.0)
+                    prob[i] = (q[i]*1.0)/somQ;
+                else
+                    prob[i] = 0.0;
+            }
+        }
+    }
+
+    return melhor;
+
+}
+
+int Grafo::random(int tam, double *prob){
+    int soma = 0;
+    int nRand = 0;
+    for (int i=0; i<tam; i++){
+        soma += prob[i]*1000;
+    }
+    nRand = (soma >0)?rand() % soma:0;
+    soma = 0;
+    for (int i=0; i<tam; i++){
+        soma+=prob[i]*1000;
+        if (nRand <= soma){
+            return i;
+        }
+    }
+}
+
+
+
+// Testando uma nova Heuristica
+
+void Grafo::validacao(No* no, int *cores, int *ultimaCor){
+
+
+    bool visitado= false;
+    if(no->getArestas() == NULL){
+        cores[no->getId()-1] = *ultimaCor;
+    }else {
+
+        Aresta *auxAresta = no->getArestas();
+
+        while (auxAresta != NULL) {
+
+            if (cores[auxAresta->getDestino()->getId() - 1] == cores[no->getId() - 1]) {
+                if(cores[auxAresta->getDestino()->getId() - 1] == -1) {
+                    cores[auxAresta->getDestino()->getId() - 1] = *ultimaCor;
+                }
+                else {
+                    *ultimaCor = *ultimaCor + 1;
+                    cores[auxAresta->getDestino()->getId() - 1] = *ultimaCor;
+                }
+            } else if(cores[auxAresta->getDestino()->getId()-1] == -1){
+                if(visitado )
+                { cores[auxAresta->getDestino()->getId()-1]= *ultimaCor;
+
+                }else {
+                    *ultimaCor = *ultimaCor + 1;
+                    cores[auxAresta->getDestino()->getId() - 1] = *ultimaCor;
+                    visitado = true;
+                }
+            }
+            auxAresta =auxAresta->getProx();
+        }
+
+    }
+
+
+}
+
 

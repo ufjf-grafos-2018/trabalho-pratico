@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "Grafo/Grafo.h"
-#include "IO/Interface.h"
+#include "../Grafo/Grafo.h"
+#include "../IO/Interface.h"
 
-#include "IO/ManipuladorArquivo.h"
+#include "../IO/ManipuladorArquivo.h"
 
 using namespace std;
 
@@ -45,12 +45,24 @@ int main(int argc, char **argv) {
         cout<<"No: "<< vetNos[p]->getId()<< " Grau: " << vetNos[p]->getGrau()<<endl;
     }
 */
-
-    grafo->coloracaoGulosoRand(0.3);
+    //srand((unsigned) time(NULL));
+    //grafo->coloracaoGulosoRand(0);
 
     /*grafo->coloracaoGuloso();
-    cout<<"Numerop de cores utilçizadas: "<<   grafo->coloracaoGuloso();*/
-    //Interface::iniciaMenu(grafo);
+
+    struct Solucao aux = grafo->coloracaoGulosoRand(0.1);
+    struct Solucao aux1 = grafo->coloracaoGulosoRand(0.2);
+    struct Solucao aux2 = grafo->coloracaoGulosoRand(0.3);
+
+    struct Solucao s = grafo->gulosoRandReativo(100,10);
+
+    cout<<"Cor: "<<aux.cores<<" Alpha :"<<aux.alpha<<endl;
+    cout<<"Cor: "<<aux1.cores<<" Alpha :"<<aux1.alpha<<endl;
+    cout<<"Cor: "<<aux2.cores<<" Alpha :"<<aux2.alpha<<endl;
+    cout<<"Cor: "<<s.cores<<" Alpha :"<<s.alpha<<endl;*/
+
+    /*cout<<"Numerop de cores utilçizadas: "<<   grafo->coloracaoGuloso();*/
+    Interface::iniciaMenu(grafo);
 
     ManipuladorArquivo::escreve(argv[2], grafo);
 
